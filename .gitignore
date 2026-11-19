@@ -1,0 +1,19 @@
+# segredos e configuração local (o .env.example é versionado)
+.env
+.env.*
+!.env.example
+
+# ambiente virtual e caches do Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# saídas geradas em tempo de execução
+/runs/
+/comparisons/
+/data/cache/
+
+# segredos da interface web
+.streamlit/secrets.toml

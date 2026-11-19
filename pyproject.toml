@@ -1,0 +1,12 @@
+# pytest: roda a partir da raiz e enxerga o pacote support_assistant
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+# ruff: formatação e regras de lint
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
