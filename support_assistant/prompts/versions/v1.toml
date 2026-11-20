@@ -1,0 +1,44 @@
+[meta]
+id = "v1"
+created = 2026-11-20
+hypothesis = "Referência: o primeiro prompt razoável que alguém escreveria, com o mesmo schema de saída das outras versões."
+changes = ["Versão inicial: papel em uma frase, perfil como rótulos, ticket colado sem delimitador e uma frase de tarefa por tipo."]
+
+[system]
+text = '''
+Você é um assistente de suporte técnico de um provedor de internet.
+'''
+
+[user]
+template = '''
+Perfil do cliente: ${profile}
+
+Ticket do cliente:
+${ticket}
+
+${task}
+'''
+
+[profile]
+template = '''
+nome: ${name}; nível técnico: ${technical_level}; estilo de comunicação: ${communication_style}; canal: ${channel}
+'''
+
+[ticket]
+template = '''
+${text}
+'''
+
+[tasks]
+diagnosis = '''
+Faça um diagnóstico do problema descrito no ticket.
+'''
+steps = '''
+Escreva um passo a passo para o cliente resolver o problema.
+'''
+questions = '''
+Escreva perguntas de esclarecimento para entender melhor o problema.
+'''
+flow = '''
+Monte um fluxo de decisão para o atendimento deste problema.
+'''
