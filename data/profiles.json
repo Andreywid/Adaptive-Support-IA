@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "profiles": [
+    {
+      "id": "p01_marta",
+      "name": "Marta",
+      "technical_level": "leigo",
+      "communication_style": "didatico",
+      "channel": "telefone"
+    },
+    {
+      "id": "p02_rafael",
+      "name": "Rafael",
+      "technical_level": "intermediario",
+      "communication_style": "direto",
+      "channel": "chat"
+    },
+    {
+      "id": "p03_carla",
+      "name": "Carla",
+      "technical_level": "avancado",
+      "communication_style": "detalhado",
+      "channel": "email"
+    },
+    {
+      "id": "p04_joao",
+      "name": "João",
+      "technical_level": "leigo",
+      "communication_style": "direto",
+      "channel": "chat"
+    }
+  ]
+}

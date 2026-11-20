@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "tickets": [
+    {
+      "id": "t01_queda_noturna",
+      "text": "Boa noite. A internet cai toda noite e volta sozinha depois de um tempo. Já aconteceu várias vezes essa semana. Podem resolver?"
+    },
+    {
+      "id": "t02_wifi_lento",
+      "text": "Olá. Contratei 300 mega, mas no quarto dos fundos a velocidade não passa de 20 mega. Na sala, perto do roteador, o teste dá uns 280. Já reiniciei o roteador e nada mudou. Copiei um trecho do registro do roteador:\nwlan0: channel 6 (2.4 GHz), RSSI -78 dBm, noise -90 dBm\nwlan0: client 3C:22:FB:xx:xx:xx rate 26 Mbps\nwlan1: channel 36 (5 GHz), clients 0\nÉ problema do sinal ou da operadora?"
+    },
+    {
+      "id": "t03_codigo_sms",
+      "text": "O aplicativo de vocês pede um código de verificação por SMS para entrar, mas o SMS nunca chega. Tentei umas cinco vezes hoje. O número é o mesmo do cadastro e recebo SMS de outros lugares normalmente."
+    },
+    {
+      "id": "t04_sem_sinal",
+      "text": "Desde a tempestade de ontem estou sem internet nenhuma. Uma luz vermelha ficou piscando no modem. Já desliguei e liguei duas vezes e nenhum aparelho conecta."
+    },
+    {
+      "id": "t05_tv_travando",
+      "text": "Só a TV da sala trava nos filmes. No celular e no notebook, no mesmo Wi-Fi, o vídeo roda normal. A TV sempre ficou no mesmo lugar e isso começou na semana passada."
+    },
+    {
+      "id": "t06_latencia_jogos",
+      "text": "O ping nos jogos sobe de 15 ms para 180 ms quando alguém em casa envia arquivos para a nuvem. Com o PC no cabo e ninguém usando a rede, fica estável em 14 ms. O teste de download mede 480 de 500 mega."
+    },
+    {
+      "id": "t07_cobranca_senha",
+      "text": "Mudei de plano no mês passado, a internet ficou mais lenta e ainda veio cobrança em dobro. Quero meu dinheiro de volta hoje. Se precisar entrar na conta, minha senha do aplicativo é Verao2026."
+    },
+    {
+      "id": "t08_relato_vago",
+      "text": "Minha internet não está boa. Podem ver isso?"
+    }
+  ]
+}
