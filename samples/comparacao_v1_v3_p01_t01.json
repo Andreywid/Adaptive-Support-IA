@@ -1,0 +1,1949 @@
+{
+  "schema_version": "1.0",
+  "comparison_id": "cmp_20261123T055615Z_1a193857fc9f",
+  "created_at": "2026-11-23T05:56:15.058498Z",
+  "customer_id": "p01_marta",
+  "ticket_id": "t01_queda_noturna",
+  "ticket": "Boa noite. A internet cai toda noite e volta sozinha depois de um tempo. Já aconteceu várias vezes essa semana. Podem resolver?",
+  "versions": [
+    "v1",
+    "v3"
+  ],
+  "seeds": [
+    101,
+    102,
+    103
+  ],
+  "content_types": [
+    "diagnosis",
+    "steps",
+    "questions",
+    "flow"
+  ],
+  "locked_config": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "include_reasoning": false
+  },
+  "schema_hashes": {
+    "diagnosis": "sha256:d284a8e0191d0f3f7b1ff778cb027e11757097eca7468600186c0f895cdfe54c",
+    "steps": "sha256:88e57f74e188e7f09bb33dcff9ad1d97b94e7a1e4af315bab802caf054c2a071",
+    "questions": "sha256:534962526ae9305d09538c1c8a661d33b47217b8bac65f590d6c221acc74ce59",
+    "flow": "sha256:12e8694d1975b2ef4424ba8be411d24b76d38258b891b8716182e7852e3fe1b8"
+  },
+  "runs": [
+    {
+      "version": "v1",
+      "seed": 101,
+      "content_type": "diagnosis",
+      "run_id": "20261123T055639Z_2e39ee",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "hypotheses": [
+          {
+            "id": "h1",
+            "description": "Interferência ou sobrecarga na rede da operadora durante o horário noturno (manutenção programada ou pico de uso).",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "Quedas recorrentes em um período específico sugerem que o problema pode estar relacionado à rede da operadora durante a noite."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "h2",
+            "description": "Problema de energia ou falha no equipamento (modem/roteador) que reinicia automaticamente durante a noite.",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "O fato de a conexão restabelecer-se sozinha indica que o equipamento provavelmente está reiniciando e recuperando a conexão."
+              }
+            ],
+            "plausibility": "high"
+          },
+          {
+            "id": "h3",
+            "description": "Interferência eletromagnética de aparelhos domésticos que ligam à noite (ex.: ar‑condicionado, aquecedor).",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "Quedas que coincidem com o período noturno podem ser provocadas por dispositivos que entram em operação à noite, gerando ruído na linha ou sobrecarga elétrica."
+              }
+            ],
+            "plausibility": "low"
+          },
+          {
+            "id": "h4",
+            "description": "Problema de cabeamento interno (cabo solto ou danificado) que se afeta com variações de temperatura noturna.",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "Variações de temperatura durante a noite podem causar mau contato em cabos antigos, resultando em quedas intermitentes."
+              }
+            ],
+            "plausibility": "low"
+          }
+        ],
+        "missing_information": [
+          "Modelo e número de série do modem/roteador.",
+          "Tipo de conexão (fibra, cabo, DSL, satélite).",
+          "Horário exato em que as quedas começam e terminam.",
+          "Se a queda ocorre em todos os dispositivos ou apenas em alguns.",
+          "Se há alguma mensagem de erro ou luz indicadora no modem/roteador durante a queda.",
+          "Se a cliente já tentou reiniciar o modem/roteador ou verificar cabos.",
+          "Presença de aparelhos que ligam à noite (ex.: ar‑condicionado, aquecedor) que possam gerar interferência."
+        ],
+        "conclusion": {
+          "hypothesis_id": "h2",
+          "confidence": "high",
+          "statement": "A causa mais provável é uma falha ou reinício automático do modem/roteador durante a noite, possivelmente relacionada a energia ou ao próprio equipamento."
+        },
+        "customer_summary": "Marta relata que a conexão de internet cai todas as noites e volta sozinha após algum tempo, ocorrendo várias vezes na última semana.",
+        "escalation": {
+          "needed": false,
+          "reason": "O problema pode ser investigado e resolvido pelo suporte de nível 1, solicitando ao cliente que verifique o equipamento, reinicie-o e, se necessário, providencie a substituição do modem/roteador."
+        }
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:f4440d0fa1f114fdbf58f02f97d6a5ce38e2035690864ea74d6048d9ea3f9209"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "diagnosis",
+      "run_id": "20261123T055639Z_ca15f5",
+      "cache_hit": true,
+      "status": "ok",
+      "output": {
+        "hypotheses": [
+          {
+            "id": "H1",
+            "description": "Instabilidade na conexão causada por interferência ou sobrecarga na rede durante a noite.",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "O cliente relata queda recorrente à noite e recuperação automática, indicando um padrão temporal que pode ser causado por interferência externa ou congestionamento da rede."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "H2",
+            "description": "Problema no equipamento interno (modem/roteador) que reinicia ou perde sinal à noite.",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "A recuperação automática pode ser um reboot do equipamento, mas o ticket não confirma falha de hardware."
+              }
+            ],
+            "plausibility": "low"
+          },
+          {
+            "id": "H3",
+            "description": "Manutenção programada ou ajuste de parâmetros na central da operadora durante o período noturno.",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "A coincidência com horário noturno pode indicar ação da operadora, porém não há informação de aviso prévio."
+              }
+            ],
+            "plausibility": "low"
+          }
+        ],
+        "missing_information": [
+          "Existe algum equipamento eletrônico próximo ao modem que ligue à noite?",
+          "A queda ocorre em todos os dispositivos ou apenas em alguns?",
+          "Há alguma notificação de manutenção programada da operadora para o horário mencionado?"
+        ],
+        "conclusion": {
+          "hypothesis_id": "H1",
+          "confidence": "medium",
+          "statement": "É mais provável que a queda seja por interferência ou sobrecarga na rede à noite, com confiança média. Verificar se há aparelhos ligados ou uso intenso nesse período."
+        },
+        "customer_summary": "Sua internet cai à noite e volta sozinha. Vamos checar se há algum equipamento ou uso intenso que possa estar interferindo.",
+        "escalation": {
+          "needed": false,
+          "reason": "Não há risco imediato à conta ou ao equipamento; apenas necessidade de coleta de informações adicionais."
+        }
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:056846106fcdcfa58f7b33096ecf3d6967a21eee01a15b973498251d3f604cd9"
+    },
+    {
+      "version": "v1",
+      "seed": 101,
+      "content_type": "steps",
+      "run_id": "20261123T055722Z_12a8de",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Olá Marta, boa noite! Vamos resolver a queda da internet que ocorre à noite. Vou explicar cada passo de forma simples e didática.",
+        "steps": [
+          {
+            "action": "Desligue o modem/roteador da tomada.",
+            "expected_result": "O equipamento será completamente desligado, interrompendo todas as conexões.",
+            "if_fails": "Se o LED de energia permanecer aceso, verifique se a tomada está realmente desligada ou tente outra tomada."
+          },
+          {
+            "action": "Aguarde 1 minuto.",
+            "expected_result": "Os capacitores internos do modem descarregam, limpando a memória temporária.",
+            "if_fails": "Se ainda houver luzes piscando, aguarde mais 30 segundos."
+          },
+          {
+            "action": "Conecte o modem novamente à tomada e ligue-o.",
+            "expected_result": "O modem inicia o processo de boot e os LEDs começam a acender sequencialmente.",
+            "if_fails": "Se o LED de energia não acender, teste a tomada com outro aparelho ou use outro cabo de alimentação."
+          },
+          {
+            "action": "Espere até que todos os LEDs indiquem “conectado” (geralmente 2‑3 minutos).",
+            "expected_result": "A conexão será restabelecida e você verá o LED de internet estável.",
+            "if_fails": "Se o LED de internet ficar piscando ou apagado, passe para o próximo passo."
+          },
+          {
+            "action": "Verifique se há interferência elétrica: desconecte temporariamente aparelhos que ligam automaticamente à noite (ex.: ar‑condicionado, aquecedor, carregadores).",
+            "expected_result": "Reduzir possíveis picos de energia que podem causar a queda.",
+            "if_fails": "Se a internet ainda cair, continue com o próximo passo."
+          },
+          {
+            "action": "Teste a conexão em um horário noturno (por exemplo, às 22h) e observe se a queda ocorre novamente.",
+            "expected_result": "Identificar se o problema persiste após o reset e a redução de interferência.",
+            "if_fails": "Se a internet cair novamente, anote o horário exato e a duração da interrupção."
+          },
+          {
+            "action": "Caso a queda continue, ligue novamente para o suporte e informe o horário exato da nova interrupção.",
+            "expected_result": "Nós poderemos abrir um diagnóstico avançado (verificar linha, sinal, possíveis falhas na central).",
+            "if_fails": "Se não conseguir ligar, envie uma mensagem por chat ou e‑mail com os detalhes coletados."
+          }
+        ],
+        "closing": "Qualquer dúvida, estou à disposição, Marta. Boa noite e espero que a conexão fique estável!",
+        "escalation_condition": "Se a internet continuar caindo todas as noites mesmo após o reset, verificação de interferência e teste de horário, ou se houver perda total de sinal por mais de 30 minutos, o caso deve ser escalado para o time de engenharia de rede.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:07bd36ef311fa72de206b66fb625915c08434d6a53cea144a8dacbd8cc379d77"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "steps",
+      "run_id": "20261123T055722Z_d13123",
+      "cache_hit": true,
+      "status": "ok",
+      "output": {
+        "opening": "Boa noite, Marta. Entendo que a internet cai à noite e volta sozinha. Vamos verificar juntos.",
+        "steps": [
+          {
+            "action": "A internet está funcionando agora?",
+            "expected_result": "Se estiver funcionando, anotamos que o problema está intermitente e aguardamos a próxima queda.",
+            "if_fails": "Se não estiver funcionando, continue para o próximo passo."
+          },
+          {
+            "action": "Quando a internet cair, verifique se o problema acontece em mais de um aparelho, como celular, computador ou TV.",
+            "expected_result": "Se todos os aparelhos perderem conexão ao mesmo tempo, anotamos que o alcance é geral.",
+            "if_fails": "Se apenas um aparelho ficar sem internet, registre o modelo e o tipo de conexão (cabo ou Wi‑Fi) e informe ao atendente."
+          },
+          {
+            "action": "Se ainda estiver sem internet, desligue o modem da tomada, aguarde 30 segundos e ligue novamente.",
+            "expected_result": "Se a luz do modem voltar ao normal e a internet retornar, anotamos que o reinício resolveu temporariamente.",
+            "if_fails": "Se a internet não voltar, registre que o problema persiste mesmo após reiniciar e informe ao atendente."
+          }
+        ],
+        "closing": "Anote as observações que fizemos e, caso o problema volte, informe o que aconteceu. Assim poderemos avançar na solução.",
+        "escalation_condition": "Encaminhar se a internet permanecer sem conexão após o reinício ou se o problema ocorrer em apenas um aparelho, indicando possível falha de equipamento ou linha.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:1ca3cace53e32ae39a718fef204169ddb9eb67cf4e96b76a4007b1d1389a71e1"
+    },
+    {
+      "version": "v1",
+      "seed": 101,
+      "content_type": "questions",
+      "run_id": "20261123T055805Z_adbfcc",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "Qual é o modelo do seu roteador/modem e há quanto tempo ele está em uso?",
+            "kind": "open",
+            "options": [],
+            "resolves": "identificar se o equipamento pode estar com falha ou desatualizado"
+          },
+          {
+            "priority": 2,
+            "text": "A queda ocorre em todos os dispositivos conectados ou apenas em algum específico?",
+            "kind": "choice",
+            "options": [
+              "Todos os dispositivos",
+              "Apenas um dispositivo",
+              "Varia entre dispositivos"
+            ],
+            "resolves": "determinar se o problema está na rede ou no dispositivo"
+          },
+          {
+            "priority": 3,
+            "text": "Você percebe algum padrão de horário ou atividade (por exemplo, streaming, download) quando a internet cai?",
+            "kind": "open",
+            "options": [],
+            "resolves": "identificar se há sobrecarga ou interferência em determinados momentos"
+          },
+          {
+            "priority": 4,
+            "text": "Já tentou reiniciar o roteador/modem quando a conexão cai?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "verificar se a solução simples de reinício já foi tentada"
+          },
+          {
+            "priority": 5,
+            "text": "Você tem alguma extensão de rede (repetidor, powerline, etc.) ou cabo Ethernet conectado ao roteador?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "avaliar possíveis pontos de falha na topologia da rede"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:16423de197fea91010a0ec2bf8d0bb99d57b26da12092fd2bb45fe23fb9f93e9"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "questions",
+      "run_id": "20261123T055805Z_90bcb5",
+      "cache_hit": true,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "A internet está funcionando neste momento?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se Sim, a queda não está ocorrendo agora; se Não, a interrupção está ativa e precisamos confirmar se é geral ou isolada."
+          },
+          {
+            "priority": 2,
+            "text": "A queda acontece em apenas um aparelho ou em vários ao mesmo tempo?",
+            "kind": "choice",
+            "options": [
+              "Só em um aparelho",
+              "Em vários aparelhos",
+              "Não sei"
+            ],
+            "resolves": "Se só em um, investigaremos o equipamento ou a conexão desse aparelho; se em vários, o problema é da rede ou do modem."
+          },
+          {
+            "priority": 3,
+            "text": "Em que horário costuma acontecer a queda? Pode indicar o período aproximado.",
+            "kind": "open",
+            "options": [],
+            "resolves": "Com o horário, podemos correlacionar com possíveis interferências ou manutenção programada e definir o próximo teste."
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:894c60919ece86f71f83cfbc27bf7a655861636eded9c3ee39a70bc2a49ba315"
+    },
+    {
+      "version": "v1",
+      "seed": 101,
+      "content_type": "flow",
+      "run_id": "20261123T055826Z_a9dc87",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "n1",
+            "kind": "question",
+            "text": "Olá Marta, boa noite! Vamos investigar a queda da internet à noite. Você percebe algum padrão nas luzes do modem/router quando a conexão cai?"
+          },
+          {
+            "id": "n2",
+            "kind": "question",
+            "text": "As luzes do modem permanecem acesas ou alguma delas apaga/fica intermitente?"
+          },
+          {
+            "id": "n3",
+            "kind": "action",
+            "text": "Orientar a cliente a reiniciar o modem: desconectar da tomada, aguardar 30 segundos e ligar novamente."
+          },
+          {
+            "id": "n4",
+            "kind": "question",
+            "text": "Após a reinicialização, a conexão permanece estável por mais de 2 horas?"
+          },
+          {
+            "id": "n5",
+            "kind": "action",
+            "text": "Agendar visita técnica para verificação de linha e equipamento interno."
+          },
+          {
+            "id": "n6",
+            "kind": "end",
+            "text": "Problema resolvido após reinício. Agradecer e encerrar o chamado."
+          },
+          {
+            "id": "n7",
+            "kind": "end",
+            "text": "Visita técnica agendada. Informar data/hora e encerrar o chamado."
+          }
+        ],
+        "edges": [
+          {
+            "source": "n1",
+            "target": "n2",
+            "label": "sim"
+          },
+          {
+            "source": "n1",
+            "target": "n3",
+            "label": "não"
+          },
+          {
+            "source": "n2",
+            "target": "n3",
+            "label": "luzes normais"
+          },
+          {
+            "source": "n2",
+            "target": "n5",
+            "label": "luzes piscando ou apagando"
+          },
+          {
+            "source": "n3",
+            "target": "n4",
+            "label": "reiniciar concluído"
+          },
+          {
+            "source": "n4",
+            "target": "n6",
+            "label": "estável"
+          },
+          {
+            "source": "n4",
+            "target": "n5",
+            "label": "instável"
+          },
+          {
+            "source": "n5",
+            "target": "n7",
+            "label": "agendar visita"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:74611fb3aac487bf694d1a89ea207137191f7249356a3a5070ba138810431e0a"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "flow",
+      "run_id": "20261123T055827Z_a85c7f",
+      "cache_hit": true,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "P1",
+            "kind": "question",
+            "text": "A internet está funcionando agora?"
+          },
+          {
+            "id": "P2",
+            "kind": "question",
+            "text": "A queda acontece em mais de um aparelho?"
+          },
+          {
+            "id": "P3",
+            "kind": "question",
+            "text": "A internet voltou após reiniciar o modem?"
+          },
+          {
+            "id": "P4",
+            "kind": "question",
+            "text": "A internet voltou após reiniciar o aparelho?"
+          },
+          {
+            "id": "A1",
+            "kind": "action",
+            "text": "Peça ao cliente reiniciar o modem e aguardar alguns minutos."
+          },
+          {
+            "id": "A2",
+            "kind": "action",
+            "text": "Peça ao cliente reiniciar o aparelho (computador, celular, etc.)."
+          },
+          {
+            "id": "F1",
+            "kind": "end",
+            "text": "Registre recorrência. Oriente observar horário e luz do modem na próxima queda."
+          },
+          {
+            "id": "F2",
+            "kind": "end",
+            "text": "Registre solução temporária. Oriente observar nova queda e informar horário."
+          },
+          {
+            "id": "F3",
+            "kind": "end",
+            "text": "Encaminhar para avaliação técnica. Registrar que reinício do modem não resolveu."
+          },
+          {
+            "id": "F4",
+            "kind": "end",
+            "text": "Encaminhar para avaliação técnica do equipamento. Registrar que reinício do aparelho não resolveu."
+          }
+        ],
+        "edges": [
+          {
+            "source": "P1",
+            "target": "F1",
+            "label": "Sim"
+          },
+          {
+            "source": "P1",
+            "target": "P2",
+            "label": "Não"
+          },
+          {
+            "source": "P2",
+            "target": "A1",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "A2",
+            "label": "Não"
+          },
+          {
+            "source": "A1",
+            "target": "P3",
+            "label": "próximo"
+          },
+          {
+            "source": "A2",
+            "target": "P4",
+            "label": "próximo"
+          },
+          {
+            "source": "P3",
+            "target": "F2",
+            "label": "Sim"
+          },
+          {
+            "source": "P3",
+            "target": "F3",
+            "label": "Não"
+          },
+          {
+            "source": "P4",
+            "target": "F2",
+            "label": "Sim"
+          },
+          {
+            "source": "P4",
+            "target": "F4",
+            "label": "Não"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:88e44ff71d5b08721385ccf91286142b05cde2d2ecb8b53d3c575713a433cda7"
+    },
+    {
+      "version": "v1",
+      "seed": 102,
+      "content_type": "diagnosis",
+      "run_id": "20261123T055910Z_87c142",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "hypotheses": [
+          {
+            "id": "h1",
+            "description": "Interferência ou sobrecarga na rede da operadora durante o horário noturno (manutenção programada ou pico de uso).",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "Quedas recorrentes em horário noturno sugerem um problema externo à residência, possivelmente na rede da operadora."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "h2",
+            "description": "Problema de energia ou falha no equipamento (modem/roteador) que reinicia automaticamente à noite.",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "Quando o equipamento perde energia ou reinicia, a conexão se restabelece automaticamente após alguns minutos."
+              }
+            ],
+            "plausibility": "high"
+          },
+          {
+            "id": "h3",
+            "description": "Interferência eletromagnética de aparelhos domésticos que ligam à noite (ex.: ar‑condicionado, aquecedor).",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "A coincidência com o período noturno pode indicar que algum aparelho ligado à noite está gerando interferência ou sobrecarga elétrica."
+              }
+            ],
+            "plausibility": "low"
+          },
+          {
+            "id": "h4",
+            "description": "Problema de sinal na linha externa (cabo de fibra ou cobre) devido a desgaste ou conexão solta.",
+            "evidence": [
+              {
+                "quote": "Já aconteceu várias vezes essa semana.",
+                "reading": "Falhas intermitentes ao longo de vários dias podem apontar para uma conexão física instável ou cabo danificado."
+              }
+            ],
+            "plausibility": "medium"
+          }
+        ],
+        "missing_information": [
+          "Modelo e número de série do modem/roteador.",
+          "Tipo de conexão (cabo, fibra, DSL, satélite).",
+          "Horário exato em que as quedas começam e terminam.",
+          "Se há algum equipamento ligado (ex.: TV, ar‑condicionado) que possa gerar interferência.",
+          "Se a queda ocorre em todos os dispositivos ou apenas em alguns.",
+          "Se há alguma mensagem de erro ou luz indicadora no modem/roteador durante a queda.",
+          "Se a cliente já tentou reiniciar o modem/roteador ou verificar cabos."
+        ],
+        "conclusion": {
+          "hypothesis_id": "h2",
+          "confidence": "high",
+          "statement": "A causa mais provável é uma falha ou reinício do equipamento de rede (modem/roteador) durante a noite, possivelmente relacionada a energia ou superaquecimento."
+        },
+        "customer_summary": "Marta relata que a conexão de internet cai todas as noites e volta sozinha após algum tempo, ocorrendo várias vezes na última semana.",
+        "escalation": {
+          "needed": false,
+          "reason": "O problema pode ser resolvido com orientações de verificação e substituição do equipamento ou ajuste de energia; não é necessário escalonar imediatamente."
+        }
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:f4440d0fa1f114fdbf58f02f97d6a5ce38e2035690864ea74d6048d9ea3f9209"
+    },
+    {
+      "version": "v3",
+      "seed": 102,
+      "content_type": "diagnosis",
+      "run_id": "20261123T055932Z_87f214",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "hypotheses": [
+          {
+            "id": "H1",
+            "description": "Instabilidade na conexão causada por interferência ou sobrecarga na rede durante a noite.",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "O cliente relata queda recorrente à noite e recuperação automática, indicando um padrão temporal que pode ser ligado a interferência ou congestionamento na rede."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "H2",
+            "description": "Problema no equipamento interno (modem/roteador) que reinicia ou perde sinal à noite.",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "A recuperação automática pode ser um reboot do equipamento, mas o ticket não confirma falha de hardware."
+              }
+            ],
+            "plausibility": "low"
+          },
+          {
+            "id": "H3",
+            "description": "Manutenção programada ou ajuste de parâmetros pela operadora que afeta a região durante a madrugada.",
+            "evidence": [
+              {
+                "quote": "Já aconteceu várias vezes essa semana.",
+                "reading": "Repetição ao longo de dias sugere algo externo ao equipamento, porém não há confirmação de manutenção."
+              }
+            ],
+            "plausibility": "low"
+          }
+        ],
+        "missing_information": [
+          "Horário exato de início e término das quedas.",
+          "Se há luz piscando no modem/roteador durante a queda.",
+          "Se outros dispositivos também perdem conexão simultaneamente."
+        ],
+        "conclusion": {
+          "hypothesis_id": "H1",
+          "confidence": "medium",
+          "statement": "É mais provável que a queda seja por interferência ou sobrecarga na rede à noite, com confiança média. Verificar horário exato e comportamento do equipamento na próxima queda."
+        },
+        "customer_summary": "Sua internet cai à noite e volta sozinha. Vamos confirmar o horário exato e observar o modem quando isso acontecer.",
+        "escalation": {
+          "needed": false,
+          "reason": "Não há risco imediato à conta ou ao equipamento; apenas necessidade de coleta de mais dados."
+        }
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:056846106fcdcfa58f7b33096ecf3d6967a21eee01a15b973498251d3f604cd9"
+    },
+    {
+      "version": "v1",
+      "seed": 102,
+      "content_type": "steps",
+      "run_id": "20261123T060018Z_365d02",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Olá Marta, tudo bem? Vamos resolver essa queda de internet que acontece à noite. Vou explicar cada passo de forma simples e didática.",
+        "steps": [
+          {
+            "action": "Desligue o modem/roteador da tomada.",
+            "expected_result": "O equipamento será completamente desligado, interrompendo qualquer processo que possa estar travado.",
+            "if_fails": "Se o LED de energia ainda permanecer aceso, mantenha o aparelho desconectado por mais 30 segundos e tente novamente."
+          },
+          {
+            "action": "Aguarde 1 minuto.",
+            "expected_result": "Os capacitores internos do modem/roteador descarregam, limpando a memória temporária.",
+            "if_fails": "Se após 1 minuto o LED de energia ainda não acender ao reconectar, passe para o próximo passo."
+          },
+          {
+            "action": "Conecte novamente o modem/roteador à tomada.",
+            "expected_result": "O equipamento inicia o processo de boot e os LEDs começam a piscar conforme o padrão de inicialização.",
+            "if_fails": "Se os LEDs não acenderem ou permanecerem apagados, verifique se a tomada está funcionando (teste outro aparelho na mesma tomada)."
+          },
+          {
+            "action": "Espere até que todos os LEDs atinjam o estado estável (geralmente verde sólido).",
+            "expected_result": "A conexão com a rede da operadora será estabelecida e a internet ficará disponível.",
+            "if_fails": "Se algum LED permanecer vermelho ou laranja, anote a cor e o padrão de piscar; isso indica um erro específico que será necessário relatar."
+          },
+          {
+            "action": "Teste a conexão usando um navegador ou aplicativo de velocidade (ex.: speedtest.net).",
+            "expected_result": "A página deve carregar normalmente e o teste de velocidade deve apresentar resultados dentro da faixa contratada.",
+            "if_fails": "Se a página não carregar ou o teste falhar, continue para o próximo passo."
+          },
+          {
+            "action": "Verifique se há cabos soltos ou danificados (cabo de energia, cabo Ethernet e cabo da linha telefônica/FTTH).",
+            "expected_result": "Todos os conectores devem estar firmes e sem sinais de desgaste.",
+            "if_fails": "Se encontrar algum cabo frouxo ou danificado, reconecte‑o firmemente ou substitua o cabo defeituoso."
+          },
+          {
+            "action": "Observe se a queda ocorre novamente durante a noite (aproximadamente entre 22h e 06h).",
+            "expected_result": "Se a internet permanecer estável, o problema foi resolvido.",
+            "if_fails": "Se a conexão ainda cair, anote o horário exato da queda e a mensagem de erro exibida (se houver)."
+          }
+        ],
+        "closing": "Caso a internet continue caindo nos mesmos horários, por favor, nos informe o horário exato e qualquer mensagem que apareça. Assim, poderemos abrir um diagnóstico avançado com a equipe de rede. Estamos à disposição!",
+        "escalation_condition": "Escalar o ticket se a conexão cair novamente após seguir todos os passos, especialmente se houver LEDs vermelhos/laranja ou se a queda ocorrer repetidamente nos mesmos horários sem solução.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:07bd36ef311fa72de206b66fb625915c08434d6a53cea144a8dacbd8cc379d77"
+    },
+    {
+      "version": "v3",
+      "seed": 102,
+      "content_type": "steps",
+      "run_id": "20261123T060039Z_97744f",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Boa noite, Marta. Entendo que a internet cai à noite e volta sozinha. Vamos verificar juntos.",
+        "steps": [
+          {
+            "action": "A internet está funcionando agora?",
+            "expected_result": "Se estiver funcionando, anotamos que o problema está intermitente e aguardamos a próxima queda.",
+            "if_fails": "Se não estiver funcionando, continue para o próximo passo."
+          },
+          {
+            "action": "Quando a internet cair, verifique se o problema acontece em mais de um aparelho da sua casa.",
+            "expected_result": "Se todos os aparelhos perderem conexão, anotamos que o alcance é geral; se só um, registramos aparelho específico.",
+            "if_fails": "Se não houver outro aparelho para testar, registre que o alcance ficou em aberto e siga para o próximo passo."
+          },
+          {
+            "action": "Se ainda estiver sem internet, desligue o modem da tomada, aguarde 30 segundos e ligue novamente.",
+            "expected_result": "Se a conexão voltar após o reinício, anotamos que o reinício resolveu temporariamente e pedimos que observe se o problema retorna.",
+            "if_fails": "Se a internet não voltar, registre a falha persistente e prepare para encaminhar ao suporte avançado."
+          }
+        ],
+        "closing": "Anote o que aconteceu em cada teste e, se o problema voltar, informe ao atendente para que possamos abrir um acompanhamento.",
+        "escalation_condition": "Encaminhar caso a internet não volte após o reinício ou se a queda ocorrer em todos os aparelhos de forma recorrente.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:1ca3cace53e32ae39a718fef204169ddb9eb67cf4e96b76a4007b1d1389a71e1"
+    },
+    {
+      "version": "v1",
+      "seed": 102,
+      "content_type": "questions",
+      "run_id": "20261123T060122Z_20e327",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "Qual é o modelo do seu roteador/modem e há quanto tempo ele está em uso?",
+            "kind": "open",
+            "options": [],
+            "resolves": "identificar se o equipamento pode estar com falha ou desatualizado"
+          },
+          {
+            "priority": 2,
+            "text": "A queda ocorre em todos os dispositivos conectados ou apenas em algum específico?",
+            "kind": "choice",
+            "options": [
+              "Todos os dispositivos",
+              "Apenas um ou alguns dispositivos",
+              "Não sei"
+            ],
+            "resolves": "determinar se o problema está na rede ou no dispositivo"
+          },
+          {
+            "priority": 3,
+            "text": "Você percebe algum padrão de horário ou atividade (por exemplo, streaming, download) quando a internet cai?",
+            "kind": "open",
+            "options": [],
+            "resolves": "entender se há sobrecarga ou interferência que causa a interrupção"
+          },
+          {
+            "priority": 4,
+            "text": "Já tentou reiniciar o roteador/modem quando a conexão cai? Se sim, o problema voltou imediatamente?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "verificar se a simples reinicialização resolve temporariamente"
+          },
+          {
+            "priority": 5,
+            "text": "Você tem alguma extensão de rede (repetidor, powerline, etc.) ou cabo Ethernet conectado ao roteador?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "avaliar se equipamentos adicionais podem estar interferindo"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:16423de197fea91010a0ec2bf8d0bb99d57b26da12092fd2bb45fe23fb9f93e9"
+    },
+    {
+      "version": "v3",
+      "seed": 102,
+      "content_type": "questions",
+      "run_id": "20261123T060206Z_7964a1",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "A internet está funcionando neste momento?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se Sim, a queda não está ocorrendo agora; se Não, a conexão está offline no momento."
+          },
+          {
+            "priority": 2,
+            "text": "A queda acontece em apenas um aparelho ou em vários ao mesmo tempo?",
+            "kind": "choice",
+            "options": [
+              "Só neste aparelho",
+              "Em vários aparelhos",
+              "Não sei"
+            ],
+            "resolves": "Se só neste aparelho, pode ser problema local; se em vários, indica falha na rede ou no modem."
+          },
+          {
+            "priority": 3,
+            "text": "Você percebe um horário específico em que a internet cai, como sempre à noite?",
+            "kind": "open",
+            "options": [],
+            "resolves": "Informar o horário ajuda a identificar se há interferência ou manutenção programada."
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:894c60919ece86f71f83cfbc27bf7a655861636eded9c3ee39a70bc2a49ba315"
+    },
+    {
+      "version": "v1",
+      "seed": 102,
+      "content_type": "flow",
+      "run_id": "20261123T060250Z_88ad30",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "n1",
+            "kind": "question",
+            "text": "Olá Marta, boa noite! Vamos verificar por que a sua internet está caindo à noite. O modem está ligado e as luzes estão acesas?"
+          },
+          {
+            "id": "n2",
+            "kind": "question",
+            "text": "As luzes do modem apresentam alguma cor diferente (vermelha, intermitente) ou alguma delas apaga quando a conexão cai?"
+          },
+          {
+            "id": "n3",
+            "kind": "action",
+            "text": "Orientar a cliente a desconectar o modem da tomada, aguardar 30 segundos e reconectar (reinício)."
+          },
+          {
+            "id": "n4",
+            "kind": "question",
+            "text": "Após o reinício, a internet permaneceu estável por mais de 30 minutos?"
+          },
+          {
+            "id": "n5",
+            "kind": "question",
+            "text": "Existe alguma manutenção programada na sua região ou comunicação de sobrecarga de rede à noite?"
+          },
+          {
+            "id": "n6",
+            "kind": "question",
+            "text": "Há uso intenso de internet na sua casa à noite (streaming, download grande, jogos online)?"
+          },
+          {
+            "id": "n7",
+            "kind": "action",
+            "text": "Abrir chamado de verificação de sinal na central e agendar visita técnica."
+          },
+          {
+            "id": "n8",
+            "kind": "end",
+            "text": "Problema resolvido: a internet está estável. Agradecemos o contato, Marta."
+          },
+          {
+            "id": "n9",
+            "kind": "end",
+            "text": "Problema encaminhado: técnico será enviado. Obrigada por aguardar, Marta."
+          }
+        ],
+        "edges": [
+          {
+            "source": "n1",
+            "target": "n2",
+            "label": "Modem ligado e luzes acesas"
+          },
+          {
+            "source": "n1",
+            "target": "n3",
+            "label": "Modem desligado ou luzes apagadas"
+          },
+          {
+            "source": "n2",
+            "target": "n3",
+            "label": "Luzes indicam falha"
+          },
+          {
+            "source": "n2",
+            "target": "n4",
+            "label": "Luzes normais"
+          },
+          {
+            "source": "n3",
+            "target": "n4",
+            "label": "Reinício concluído"
+          },
+          {
+            "source": "n4",
+            "target": "n8",
+            "label": "Internet está estável"
+          },
+          {
+            "source": "n4",
+            "target": "n5",
+            "label": "Ainda cai"
+          },
+          {
+            "source": "n5",
+            "target": "n8",
+            "label": "Manutenção identificada"
+          },
+          {
+            "source": "n5",
+            "target": "n6",
+            "label": "Nenhuma manutenção"
+          },
+          {
+            "source": "n6",
+            "target": "n7",
+            "label": "Uso intenso à noite"
+          },
+          {
+            "source": "n6",
+            "target": "n8",
+            "label": "Uso normal"
+          },
+          {
+            "source": "n7",
+            "target": "n9",
+            "label": "Chamado aberto"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:74611fb3aac487bf694d1a89ea207137191f7249356a3a5070ba138810431e0a"
+    },
+    {
+      "version": "v3",
+      "seed": 102,
+      "content_type": "flow",
+      "run_id": "20261123T060313Z_6edddc",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "P1",
+            "kind": "question",
+            "text": "A internet está funcionando agora?"
+          },
+          {
+            "id": "P2",
+            "kind": "question",
+            "text": "A queda acontece em todos os aparelhos?"
+          },
+          {
+            "id": "P3",
+            "kind": "question",
+            "text": "As luzes do modem estão ligadas e piscando?"
+          },
+          {
+            "id": "P4",
+            "kind": "question",
+            "text": "A internet funciona no outro aparelho?"
+          },
+          {
+            "id": "P5",
+            "kind": "question",
+            "text": "A internet voltou após reiniciar?"
+          },
+          {
+            "id": "A1",
+            "kind": "action",
+            "text": "Oriente reiniciar modem e roteador."
+          },
+          {
+            "id": "F1",
+            "kind": "end",
+            "text": "Registre recorrência e peça observar nova queda."
+          },
+          {
+            "id": "F2",
+            "kind": "end",
+            "text": "Registre falta de energia no equipamento e encaminhe avaliação técnica."
+          },
+          {
+            "id": "F3",
+            "kind": "end",
+            "text": "Encaminhar avaliação técnica e registrar sinais observados."
+          }
+        ],
+        "edges": [
+          {
+            "source": "P1",
+            "target": "F1",
+            "label": "Sim"
+          },
+          {
+            "source": "P1",
+            "target": "P2",
+            "label": "Não"
+          },
+          {
+            "source": "P2",
+            "target": "P3",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "P4",
+            "label": "Não"
+          },
+          {
+            "source": "P3",
+            "target": "A1",
+            "label": "Sim"
+          },
+          {
+            "source": "P3",
+            "target": "F2",
+            "label": "Não"
+          },
+          {
+            "source": "A1",
+            "target": "P5",
+            "label": "próximo"
+          },
+          {
+            "source": "P5",
+            "target": "F1",
+            "label": "Sim"
+          },
+          {
+            "source": "P5",
+            "target": "F3",
+            "label": "Não"
+          },
+          {
+            "source": "P4",
+            "target": "F1",
+            "label": "Sim"
+          },
+          {
+            "source": "P4",
+            "target": "F3",
+            "label": "Não"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:88e44ff71d5b08721385ccf91286142b05cde2d2ecb8b53d3c575713a433cda7"
+    },
+    {
+      "version": "v1",
+      "seed": 103,
+      "content_type": "diagnosis",
+      "run_id": "20261123T060336Z_cdb496",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "hypotheses": [
+          {
+            "id": "h1",
+            "description": "Interferência ou sobrecarga na rede local durante a noite, possivelmente causada por equipamentos que ligam automaticamente (ex.: roteador sobreaquecendo, dispositivos IoT, ou atualizações de firmware)",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "O padrão de queda ocorre em horário noturno, sugerindo um gatilho recorrente ligado ao horário."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "h2",
+            "description": "Problema de sinal da operadora (ex.: manutenção programada, congestionamento de fibra ou cabo, falha no equipamento da central)",
+            "evidence": [
+              {
+                "quote": "Já aconteceu várias vezes essa semana.",
+                "reading": "A recorrência semanal pode indicar uma manutenção ou instabilidade na rede da operadora."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "h3",
+            "description": "Cabo ou conexão física defeituosa (ex.: cabo coaxial/ethernet solto, conector danificado, interferência elétrica)",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "Quedas intermitentes costumam estar associadas a mau contato físico que se agrava com variações de temperatura ou vibração."
+              }
+            ],
+            "plausibility": "high"
+          },
+          {
+            "id": "h4",
+            "description": "Configuração de energia ou tomada com falha (ex.: tomada que desliga ou flutua tensão durante a noite)",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "Embora possível, é menos comum que a energia da tomada cause quedas apenas à noite."
+              }
+            ],
+            "plausibility": "low"
+          }
+        ],
+        "missing_information": [
+          "Modelo e marca do roteador/modem utilizado.",
+          "Se há outros dispositivos conectados à mesma rede quando a queda ocorre.",
+          "Se a queda acontece em todos os dispositivos ou apenas em alguns.",
+          "Se há alguma atividade programada (backup, atualizações) que inicia à noite.",
+          "Se a tomada onde o roteador está conectado tem energia estável (testar com outro aparelho).",
+          "Se o cliente já verificou o cabo de rede/telefone e o conector na parede."
+        ],
+        "conclusion": {
+          "hypothesis_id": "h3",
+          "confidence": "high",
+          "statement": "A causa mais provável são falhas físicas na conexão (cabo, conector ou tomada) que se manifestam quando a temperatura ou vibração muda durante a noite."
+        },
+        "customer_summary": "Marta, sua internet está caindo todas as noites e volta sozinha depois de um tempo. Isso costuma acontecer quando há algum problema no cabo ou na conexão física, que pode ficar instável com a variação de temperatura ou vibração durante a noite.",
+        "escalation": {
+          "needed": false,
+          "reason": "O problema pode ser resolvido com verificações simples de cabos, conexões e energia no local do cliente, sem necessidade de intervenção de nível avançado."
+        }
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:f4440d0fa1f114fdbf58f02f97d6a5ce38e2035690864ea74d6048d9ea3f9209"
+    },
+    {
+      "version": "v3",
+      "seed": 103,
+      "content_type": "diagnosis",
+      "run_id": "20261123T060357Z_bdd9ff",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "hypotheses": [
+          {
+            "id": "H1",
+            "description": "Instabilidade na conexão causada por interferência ou sobrecarga na rede durante a noite.",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "O cliente relata queda recorrente à noite com recuperação automática, indicando um padrão temporal que pode ser causado por interferência ou congestionamento na rede."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "H2",
+            "description": "Problema no equipamento interno (modem/ONT) que reinicia ou perde sinal durante a madrugada.",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "A recuperação automática pode ser um reset do equipamento, mas o ticket não confirma falha de hardware."
+              }
+            ],
+            "plausibility": "low"
+          },
+          {
+            "id": "H3",
+            "description": "Manutenção programada ou ajuste de parâmetros na central que afeta a região durante a madrugada.",
+            "evidence": [
+              {
+                "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+                "reading": "A recorrência noturna pode ser consequência de intervenções da operadora, porém não há informação de aviso prévio."
+              }
+            ],
+            "plausibility": "low"
+          }
+        ],
+        "missing_information": [
+          "Horário exato de início e término das quedas.",
+          "Se há algum equipamento ligado (Wi‑Fi, TV, telefone) que também perde sinal.",
+          "Se a queda ocorre em todos os dispositivos ou apenas em alguns."
+        ],
+        "conclusion": {
+          "hypothesis_id": "H1",
+          "confidence": "medium",
+          "statement": "É mais provável que a queda seja por interferência ou sobrecarga na rede à noite, com confiança média. Verificar horário exato e se outros aparelhos também perdem sinal."
+        },
+        "customer_summary": "Sua internet cai à noite e volta sozinha. Vamos confirmar o horário exato das quedas e se todos os dispositivos são afetados.",
+        "escalation": {
+          "needed": false,
+          "reason": "Não há risco imediato à conta ou ao equipamento; apenas necessidade de coleta de mais dados."
+        }
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:056846106fcdcfa58f7b33096ecf3d6967a21eee01a15b973498251d3f604cd9"
+    },
+    {
+      "version": "v1",
+      "seed": 103,
+      "content_type": "steps",
+      "run_id": "20261123T060442Z_993b29",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Olá Marta, tudo bem? Vamos resolver essa queda de internet que acontece à noite. Vou explicar cada passo de forma simples e didática.",
+        "steps": [
+          {
+            "action": "Desligue o modem/roteador da tomada.",
+            "expected_result": "O equipamento será completamente desligado, interrompendo qualquer processo que possa estar travado.",
+            "if_fails": "Se o LED de energia ainda permanecer aceso, mantenha o aparelho desconectado por mais 30 segundos e tente novamente."
+          },
+          {
+            "action": "Aguarde 1 minuto.",
+            "expected_result": "Os capacitores internos do modem/roteador descarregam, limpando a memória temporária.",
+            "if_fails": "Se após 1 minuto o LED de energia ainda não acender ao reconectar, passe para o próximo passo."
+          },
+          {
+            "action": "Conecte novamente o modem/roteador à tomada.",
+            "expected_result": "O equipamento inicia o processo de boot e os LEDs começam a piscar conforme o padrão de inicialização.",
+            "if_fails": "Se os LEDs não acenderem ou permanecerem apagados, verifique se a tomada está funcionando (teste outro aparelho na mesma tomada)."
+          },
+          {
+            "action": "Espere até que todos os LEDs atinjam o estado estável (geralmente verde sólido).",
+            "expected_result": "A conexão com a rede da operadora será estabelecida e a internet ficará disponível.",
+            "if_fails": "Se algum LED permanecer vermelho ou laranja, anote a cor e o padrão de piscar; isso indica um erro específico que será necessário relatar."
+          },
+          {
+            "action": "Teste a conexão usando um navegador ou aplicativo de velocidade (ex.: speedtest.net).",
+            "expected_result": "A página deve carregar normalmente e o teste de velocidade deve apresentar resultados dentro da faixa contratada.",
+            "if_fails": "Se a página não carregar ou o teste falhar, continue para o próximo passo."
+          },
+          {
+            "action": "Verifique se há cabos soltos ou danificados (cabo de energia, cabo Ethernet e cabo da linha telefônica/FTTH).",
+            "expected_result": "Todos os conectores devem estar firmes e sem sinais de desgaste.",
+            "if_fails": "Se encontrar algum cabo frouxo ou danificado, reconecte-o firmemente ou substitua o cabo defeituoso."
+          },
+          {
+            "action": "Observe se a queda ocorre novamente durante a noite (aproximadamente entre 22h e 06h).",
+            "expected_result": "Se a internet permanecer estável, o problema foi resolvido.",
+            "if_fails": "Se a conexão ainda cair, anote o horário exato da queda e a mensagem de erro exibida (se houver)."
+          }
+        ],
+        "closing": "Caso a internet continue caindo nos mesmos horários, por favor, nos informe o horário exato e qualquer mensagem que apareça. Assim, poderemos abrir um diagnóstico avançado com a equipe de rede. Estamos à disposição!",
+        "escalation_condition": "Escalar o ticket se a conexão cair novamente após seguir todos os passos, especialmente se houver LEDs vermelhos/laranja ou se a queda ocorrer repetidamente nos mesmos horários sem solução.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:07bd36ef311fa72de206b66fb625915c08434d6a53cea144a8dacbd8cc379d77"
+    },
+    {
+      "version": "v3",
+      "seed": 103,
+      "content_type": "steps",
+      "run_id": "20261123T060504Z_617650",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Boa noite, Marta. Entendo que a internet cai à noite e volta sozinha. Vamos verificar juntos.",
+        "steps": [
+          {
+            "action": "A internet está funcionando agora?",
+            "expected_result": "Se estiver funcionando, anotamos que o problema está intermitente e aguardamos a próxima queda.",
+            "if_fails": "Se não estiver funcionando, continue para o próximo passo."
+          },
+          {
+            "action": "Quando a internet cair, verifique se o problema acontece em mais de um aparelho, como celular, computador ou TV.",
+            "expected_result": "Se todos os aparelhos perderem conexão ao mesmo tempo, anotamos que o alcance é geral.",
+            "if_fails": "Se apenas um aparelho ficar sem internet, registre o modelo e siga para o próximo passo."
+          },
+          {
+            "action": "Com a internet ainda sem sinal, desligue o modem da tomada, aguarde 30 segundos e ligue novamente.",
+            "expected_result": "Se a conexão voltar imediatamente, anotamos que o reinício resolveu temporariamente.",
+            "if_fails": "Se a internet não voltar, registre que o problema persiste mesmo após reinício."
+          }
+        ],
+        "closing": "Anote as observações que fizemos e, caso o problema volte, informe ao atendente o que aconteceu em cada passo.",
+        "escalation_condition": "Encaminhar se a internet permanecer sem sinal após o reinício ou se o problema ocorrer em apenas um aparelho, indicando possível falha de equipamento ou linha.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:1ca3cace53e32ae39a718fef204169ddb9eb67cf4e96b76a4007b1d1389a71e1"
+    },
+    {
+      "version": "v1",
+      "seed": 103,
+      "content_type": "questions",
+      "run_id": "20261123T060547Z_4bae57",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "Qual é o modelo do seu roteador/modem e há quanto tempo ele está em uso?",
+            "kind": "open",
+            "options": [],
+            "resolves": "identificar se o equipamento pode estar com falha ou desatualizado"
+          },
+          {
+            "priority": 2,
+            "text": "A queda ocorre em todos os dispositivos conectados ou apenas em algum específico?",
+            "kind": "choice",
+            "options": [
+              "Todos os dispositivos",
+              "Apenas um ou alguns dispositivos",
+              "Não sei"
+            ],
+            "resolves": "determinar se o problema está na rede ou no dispositivo"
+          },
+          {
+            "priority": 3,
+            "text": "Você percebe algum padrão de horário ou atividade (por exemplo, streaming, download) quando a internet cai?",
+            "kind": "open",
+            "options": [],
+            "resolves": "entender se há sobrecarga ou interferência que causa a interrupção"
+          },
+          {
+            "priority": 4,
+            "text": "Já tentou reiniciar o roteador/modem quando a conexão cai? Se sim, o problema voltou imediatamente?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "verificar se a simples reinicialização resolve temporariamente"
+          },
+          {
+            "priority": 5,
+            "text": "Você tem alguma extensão de Wi‑Fi, repetidor ou rede mesh em casa?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "avaliar se equipamentos adicionais podem estar interferindo"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:16423de197fea91010a0ec2bf8d0bb99d57b26da12092fd2bb45fe23fb9f93e9"
+    },
+    {
+      "version": "v3",
+      "seed": 103,
+      "content_type": "questions",
+      "run_id": "20261123T060609Z_e4d1bf",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "A internet está funcionando agora?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se sim, a queda não está ocorrendo no momento; se não, a conexão está indisponível e precisamos confirmar se há sinal no modem."
+          },
+          {
+            "priority": 2,
+            "text": "A queda acontece em todos os aparelhos ou só em algum específico?",
+            "kind": "choice",
+            "options": [
+              "Todos",
+              "Só em um",
+              "Não sei"
+            ],
+            "resolves": "Se todos, indica problema na linha ou no modem; se só em um, pode ser dispositivo ou Wi‑Fi; se não sei, precisamos observar mais detalhes."
+          },
+          {
+            "priority": 3,
+            "text": "Você percebe alguma mudança nas luzes do modem quando a internet cai?",
+            "kind": "choice",
+            "options": [
+              "Luz apagada",
+              "Luz piscando",
+              "Luz fixa",
+              "Não sei"
+            ],
+            "resolves": "Luz apagada ou piscando pode indicar perda de sinal; luz fixa indica que o modem está ligado mas pode haver falha de rede; se não sabe, o atendente deve orientar a observar."
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:894c60919ece86f71f83cfbc27bf7a655861636eded9c3ee39a70bc2a49ba315"
+    },
+    {
+      "version": "v1",
+      "seed": 103,
+      "content_type": "flow",
+      "run_id": "20261123T060630Z_bee056",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "n1",
+            "kind": "question",
+            "text": "Olá Marta, boa noite! Vamos investigar a queda da internet à noite. Você percebe algum padrão nas luzes do modem/router quando a conexão cai?"
+          },
+          {
+            "id": "n2",
+            "kind": "question",
+            "text": "As luzes do modem permanecem acesas ou alguma delas apaga/fica intermitente?"
+          },
+          {
+            "id": "n3",
+            "kind": "action",
+            "text": "Orientar a cliente a reiniciar o modem: desconectar da tomada, aguardar 30 segundos e ligar novamente."
+          },
+          {
+            "id": "n4",
+            "kind": "question",
+            "text": "Após a reinicialização, a conexão permanece estável por mais de 2 horas?"
+          },
+          {
+            "id": "n5",
+            "kind": "action",
+            "text": "Agendar visita técnica para verificação de linha e equipamento interno."
+          },
+          {
+            "id": "n6",
+            "kind": "end",
+            "text": "Problema resolvido após reinício. Agradecer e encerrar o chamado."
+          },
+          {
+            "id": "n7",
+            "kind": "end",
+            "text": "Visita técnica agendada. Informar data/hora e encerrar o chamado."
+          }
+        ],
+        "edges": [
+          {
+            "source": "n1",
+            "target": "n2",
+            "label": "sim"
+          },
+          {
+            "source": "n1",
+            "target": "n3",
+            "label": "não"
+          },
+          {
+            "source": "n2",
+            "target": "n3",
+            "label": "luzes normais"
+          },
+          {
+            "source": "n2",
+            "target": "n5",
+            "label": "luzes piscando ou apagando"
+          },
+          {
+            "source": "n3",
+            "target": "n4",
+            "label": "reiniciar concluído"
+          },
+          {
+            "source": "n4",
+            "target": "n6",
+            "label": "estável"
+          },
+          {
+            "source": "n4",
+            "target": "n5",
+            "label": "instável"
+          },
+          {
+            "source": "n5",
+            "target": "n7",
+            "label": "agendar visita"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:74611fb3aac487bf694d1a89ea207137191f7249356a3a5070ba138810431e0a"
+    },
+    {
+      "version": "v3",
+      "seed": 103,
+      "content_type": "flow",
+      "run_id": "20261123T060655Z_543964",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "P1",
+            "kind": "question",
+            "text": "A internet está funcionando agora?"
+          },
+          {
+            "id": "F1",
+            "kind": "end",
+            "text": "Registre a recorrência e peça observar nova falha."
+          },
+          {
+            "id": "P2",
+            "kind": "question",
+            "text": "Só este aparelho está sem internet?"
+          },
+          {
+            "id": "A1",
+            "kind": "action",
+            "text": "Oriente reiniciar o modem e o aparelho."
+          },
+          {
+            "id": "P3",
+            "kind": "question",
+            "text": "A internet voltou após reiniciar?"
+          },
+          {
+            "id": "P4",
+            "kind": "question",
+            "text": "Outros aparelhos também estão sem internet?"
+          },
+          {
+            "id": "A2",
+            "kind": "action",
+            "text": "Oriente reiniciar apenas o modem."
+          },
+          {
+            "id": "P5",
+            "kind": "question",
+            "text": "A internet voltou nos aparelhos?"
+          },
+          {
+            "id": "F2",
+            "kind": "end",
+            "text": "Registre que voltou e peça observar nova falha."
+          },
+          {
+            "id": "F3",
+            "kind": "end",
+            "text": "Encaminhar para avaliação técnica e registrar os sinais observados."
+          }
+        ],
+        "edges": [
+          {
+            "source": "P1",
+            "target": "F1",
+            "label": "Sim"
+          },
+          {
+            "source": "P1",
+            "target": "P2",
+            "label": "Não"
+          },
+          {
+            "source": "P2",
+            "target": "A1",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "P4",
+            "label": "Não"
+          },
+          {
+            "source": "A1",
+            "target": "P3",
+            "label": "Executado"
+          },
+          {
+            "source": "P3",
+            "target": "F2",
+            "label": "Sim"
+          },
+          {
+            "source": "P3",
+            "target": "F3",
+            "label": "Não"
+          },
+          {
+            "source": "P4",
+            "target": "A2",
+            "label": "Sim"
+          },
+          {
+            "source": "P4",
+            "target": "F3",
+            "label": "Não"
+          },
+          {
+            "source": "A2",
+            "target": "P5",
+            "label": "Executado"
+          },
+          {
+            "source": "P5",
+            "target": "F2",
+            "label": "Sim"
+          },
+          {
+            "source": "P5",
+            "target": "F3",
+            "label": "Não"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:88e44ff71d5b08721385ccf91286142b05cde2d2ecb8b53d3c575713a433cda7"
+    }
+  ],
+  "blind_seed": 28842,
+  "blind_map": [
+    {
+      "content_type": "diagnosis",
+      "seed": 101,
+      "a": "v1",
+      "b": "v3"
+    },
+    {
+      "content_type": "steps",
+      "seed": 101,
+      "a": "v3",
+      "b": "v1"
+    },
+    {
+      "content_type": "questions",
+      "seed": 101,
+      "a": "v1",
+      "b": "v3"
+    },
+    {
+      "content_type": "flow",
+      "seed": 101,
+      "a": "v1",
+      "b": "v3"
+    },
+    {
+      "content_type": "diagnosis",
+      "seed": 102,
+      "a": "v3",
+      "b": "v1"
+    },
+    {
+      "content_type": "steps",
+      "seed": 102,
+      "a": "v3",
+      "b": "v1"
+    },
+    {
+      "content_type": "questions",
+      "seed": 102,
+      "a": "v3",
+      "b": "v1"
+    },
+    {
+      "content_type": "flow",
+      "seed": 102,
+      "a": "v1",
+      "b": "v3"
+    },
+    {
+      "content_type": "diagnosis",
+      "seed": 103,
+      "a": "v3",
+      "b": "v1"
+    },
+    {
+      "content_type": "steps",
+      "seed": 103,
+      "a": "v1",
+      "b": "v3"
+    },
+    {
+      "content_type": "questions",
+      "seed": 103,
+      "a": "v3",
+      "b": "v1"
+    },
+    {
+      "content_type": "flow",
+      "seed": 103,
+      "a": "v1",
+      "b": "v3"
+    }
+  ],
+  "evaluations": [
+    {
+      "content_type": "diagnosis",
+      "seed": 101,
+      "outputs": [
+        {
+          "position": "A",
+          "version": "v1",
+          "evaluation": {
+            "clarity": {
+              "score": 3,
+              "justification": "A estrutura é fácil de acompanhar, mas a hipótese mais forte aparece em segundo lugar e a lista de sete itens dilui o que vale verificar primeiro.",
+              "evidence": "Modelo e número de série do modem/roteador."
+            },
+            "customer_fit": {
+              "score": 2,
+              "justification": "O resumo fala da Marta em terceira pessoa. Parece uma anotação interna numa parte feita para ler à cliente.",
+              "evidence": "Marta relata que a conexão de internet cai todas as noites"
+            },
+            "actionability": {
+              "score": 2,
+              "justification": "Atribui a queda ao equipamento com confiança alta e vai de reiniciar a trocar o modem sem indicar o primeiro teste.",
+              "evidence": "reinicie-o e, se necessário, providencie a substituição do modem/roteador"
+            },
+            "evaluator": "human",
+            "evaluated_at": "2026-11-23T06:43:37.482411Z"
+          }
+        },
+        {
+          "position": "B",
+          "version": "v3",
+          "evaluation": {
+            "clarity": {
+              "score": 4,
+              "justification": "As hipóteses vêm em ordem e o texto reconhece onde falta evidência. A mesma frase do ticket ainda serve de base para as três.",
+              "evidence": "mas o ticket não confirma falha de hardware"
+            },
+            "customer_fit": {
+              "score": 4,
+              "justification": "Fala direto com a Marta em frases simples. “Uso intenso” fica meio vago para quem vai tentar observar isso em casa.",
+              "evidence": "Sua internet cai à noite e volta sozinha."
+            },
+            "actionability": {
+              "score": 3,
+              "justification": "Perguntar quantos aparelhos são afetados ajuda na triagem. Falta dizer como seguir em cada caso, e o relato ainda é fraco para confiança média.",
+              "evidence": "A queda ocorre em todos os dispositivos ou apenas em alguns?"
+            },
+            "evaluator": "human",
+            "evaluated_at": "2026-11-23T06:43:37.482488Z"
+          }
+        }
+      ]
+    },
+    {
+      "content_type": "steps",
+      "seed": 101,
+      "outputs": [
+        {
+          "position": "A",
+          "version": "v3",
+          "evaluation": {
+            "clarity": {
+              "score": 4,
+              "justification": "Os três passos são fáceis de acompanhar. Depois de perguntar se a internet funciona agora, o segundo passo deixa dúvida sobre testar já ou na próxima queda.",
+              "evidence": "Quando a internet cair, verifique se o problema acontece em mais de um aparelho"
+            },
+            "customer_fit": {
+              "score": 4,
+              "justification": "A fala é simples na maior parte. Pedir o modelo e o tipo de conexão pode travar a ligação se a Marta não souber esses dados.",
+              "evidence": "registre o modelo e o tipo de conexão"
+            },
+            "actionability": {
+              "score": 3,
+              "justification": "O teste pede verificar mais de um aparelho, mas só orienta os casos de todos ou de apenas um. Quando é só um, encaminha sem testar esse aparelho primeiro.",
+              "evidence": "ou se o problema ocorrer em apenas um aparelho"
+            },
+            "evaluator": "human",
+            "evaluated_at": "2026-11-23T06:43:37.482615Z"
+          }
+        },
+        {
+          "position": "B",
+          "version": "v1",
+          "evaluation": {
+            "clarity": {
+              "score": 3,
+              "justification": "Dá para seguir a ordem, mas são sete passos e o teste no horário da queda fica para mais tarde.",
+              "evidence": "Teste a conexão em um horário noturno (por exemplo, às 22h)"
+            },
+            "customer_fit": {
+              "score": 2,
+              "justification": "“Boot” e “LEDs” aparecem sem explicação numa ligação com uma cliente leiga.",
+              "evidence": "O modem inicia o processo de boot e os LEDs começam a acender sequencialmente."
+            },
+            "actionability": {
+              "score": 3,
+              "justification": "Os passos têm resultado esperado e alternativa, mas o roteiro começa pelo reinício sem conferir se a internet ainda está fora.",
+              "evidence": "Desligue o modem/roteador da tomada."
+            },
+            "evaluator": "human",
+            "evaluated_at": "2026-11-23T06:43:37.482702Z"
+          }
+        }
+      ]
+    },
+    {
+      "content_type": "questions",
+      "seed": 101,
+      "outputs": [
+        {
+          "position": "A",
+          "version": "v1",
+          "evaluation": {
+            "clarity": {
+              "score": 3,
+              "justification": "As perguntas são compreensíveis na maior parte. A primeira pede modelo e tempo de uso de uma vez.",
+              "evidence": "Qual é o modelo do seu roteador/modem e há quanto tempo ele está em uso?"
+            },
+            "customer_fit": {
+              "score": 2,
+              "justification": "São cinco perguntas numa ligação. A última traz termos que a Marta pode não conhecer.",
+              "evidence": "repetidor, powerline, etc."
+            },
+            "actionability": {
+              "score": 2,
+              "justification": "Começa pelo modelo do aparelho, sem indicar o que muda com essa informação. A pergunta que ajuda a separar falha geral de falha isolada fica para depois.",
+              "evidence": "Qual é o modelo do seu roteador/modem e há quanto tempo ele está em uso?"
+            },
+            "evaluator": "human",
+            "evaluated_at": "2026-11-23T06:43:37.482866Z"
+          }
+        },
+        {
+          "position": "B",
+          "version": "v3",
+          "evaluation": {
+            "clarity": {
+              "score": 4,
+              "justification": "As perguntas são curtas. A última tenta precisar o horário, embora a Marta já tenha dito que a queda acontece à noite.",
+              "evidence": "Em que horário costuma acontecer a queda? Pode indicar o período aproximado."
+            },
+            "customer_fit": {
+              "score": 5,
+              "justification": "São três perguntas fáceis de fazer por telefone, com palavras do dia a dia e espaço para a Marta dizer que não sabe.",
+              "evidence": "A queda acontece em apenas um aparelho ou em vários ao mesmo tempo?"
+            },
+            "actionability": {
+              "score": 4,
+              "justification": "As duas primeiras respostas ajudam a escolher a próxima ação. A última pede o horário, mas não indica qual teste fazer com essa informação.",
+              "evidence": "Com o horário, podemos correlacionar com possíveis interferências ou manutenção programada e definir o próximo teste."
+            },
+            "evaluator": "human",
+            "evaluated_at": "2026-11-23T06:43:37.482899Z"
+          }
+        }
+      ]
+    },
+    {
+      "content_type": "flow",
+      "seed": 101,
+      "outputs": [
+        {
+          "position": "A",
+          "version": "v1",
+          "evaluation": {
+            "clarity": {
+              "score": 2,
+              "justification": "A abertura é longa e a primeira pergunta fala de um “padrão” pouco específico. O nó seguinte volta ao assunto das luzes.",
+              "evidence": "Você percebe algum padrão nas luzes do modem/router quando a conexão cai?"
+            },
+            "customer_fit": {
+              "score": 3,
+              "justification": "O atendente consegue seguir as instruções, mas a pergunta que faria à Marta usa “router” sem explicar.",
+              "evidence": "nas luzes do modem/router"
+            },
+            "actionability": {
+              "score": 3,
+              "justification": "Os ramos têm desfecho, mas uma luz piscando ou apagando já leva a agendar visita, sem confirmar quantos aparelhos perderam a conexão.",
+              "evidence": "luzes piscando ou apagando -> [n5] Agendar visita técnica para verificação de linha e equipamento interno."
+            },
+            "evaluator": "human",
+            "evaluated_at": "2026-11-23T06:43:37.483054Z"
+          }
+        },
+        {
+          "position": "B",
+          "version": "v3",
+          "evaluation": {
+            "clarity": {
+              "score": 5,
+              "justification": "Começa pelo estado da conexão e só então verifica quantos aparelhos são afetados. Cada pergunta organiza uma decisão.",
+              "evidence": "A internet está funcionando agora?"
+            },
+            "customer_fit": {
+              "score": 4,
+              "justification": "As perguntas cabem numa ligação. Ao orientar o reinício, o atendente ainda precisa explicar à Marta o que fazer na prática.",
+              "evidence": "Peça ao cliente reiniciar o modem e aguardar alguns minutos."
+            },
+            "actionability": {
+              "score": 4,
+              "justification": "O fluxo manda testar o aparelho ou o modem conforme o alcance da falha e diz o que registrar se ela persistir. O tempo de espera fica vago.",
+              "evidence": "Registrar que reinício do aparelho não resolveu."
+            },
+            "evaluator": "human",
+            "evaluated_at": "2026-11-23T06:43:37.483085Z"
+          }
+        }
+      ]
+    }
+  ],
+  "profile": {
+    "id": "p01_marta",
+    "name": "Marta",
+    "technical_level": "leigo",
+    "communication_style": "didatico",
+    "channel": "telefone"
+  },
+  "rubric": "Clareza (clarity)\n  1: Desorganizado, contraditório ou ambíguo em ponto central.\n  3: Compreensível, com 1 ou 2 trechos ambíguos.\n  5: Cada item tem um só sentido, em ordem lógica, sem redundância.\n  2 e 4: entre as âncoras vizinhas.\n\nAdequação ao nível do cliente (customer_fit)\n  1: Registro errado para o perfil (ex.: comando de terminal para leigo ao telefone).\n  3: Adequado na maior parte, com 1 ou 2 desvios (ex.: jargão sem explicação).\n  5: Vocabulário, profundidade e formato combinam com nível, estilo e canal em todos os itens.\n  2 e 4: entre as âncoras vizinhas.\n\nAcionabilidade (actionability)\n  1: Não dá para saber o que fazer.\n  3: Próximo passo claro, sem critério de sucesso nem alternativa.\n  5: Próximo passo inequívoco, com resultado esperado e o que fazer se falhar.\n  2 e 4: entre as âncoras vizinhas."
+}

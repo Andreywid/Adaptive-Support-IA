@@ -1,0 +1,57 @@
+{
+  "versoes": [
+    "v3",
+    "v4"
+  ],
+  "hashes_dos_prompts": {
+    "v3": "0e634e7ea9d9b7b7ba06b70fc9327a346c5a2ef7839952144b1ed8b0f439b51d",
+    "v4": "3fe251033a70d1aa91ff31b7087764491baa404b7f8c2098588035ae61cbd06a"
+  },
+  "casos": [
+    [
+      "p01_marta",
+      "t04_sem_sinal"
+    ],
+    [
+      "p04_joao",
+      "t05_tv_travando"
+    ],
+    [
+      "p03_carla",
+      "t06_latencia_jogos"
+    ],
+    [
+      "p02_rafael",
+      "t07_cobranca_senha"
+    ],
+    [
+      "p01_marta",
+      "t08_relato_vago"
+    ]
+  ],
+  "modelo": "openai/gpt-oss-120b",
+  "temperatura": 0,
+  "seed": 101,
+  "regra": "A v4 só vira padrão se não tiver mais saídas inválidas que a v3 e cometer menos violações.",
+  "respostas_por_versao": 20,
+  "validas_na_coleta": {
+    "v3": 18,
+    "v4": 17
+  },
+  "validas_com_validador_corrigido": {
+    "v3": 20,
+    "v4": 18
+  },
+  "respostas_com_reparo": {
+    "v3": 1,
+    "v4": 3
+  },
+  "decisao": "A v3 continua como versão final, porque a v4 teve mais saídas inválidas.",
+  "arquivos": [
+    "comparacao_v3_v4_p01_t04.json",
+    "comparacao_v3_v4_p04_t05.json",
+    "comparacao_v3_v4_p03_t06.json",
+    "comparacao_v3_v4_p02_t07.json",
+    "comparacao_v3_v4_p01_t08.json"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261123T055932Z_87f214",
+  "timestamp": "2026-11-23T05:59:32.450384Z",
+  "customer_id": "p01_marta",
+  "ticket_id": "t01_queda_noturna",
+  "ticket": "Boa noite. A internet cai toda noite e volta sozinha depois de um tempo. Já aconteceu várias vezes essa semana. Podem resolver?",
+  "content_type": "diagnosis",
+  "prompt_version": "v3",
+  "prompt_hash": "sha256:056846106fcdcfa58f7b33096ecf3d6967a21eee01a15b973498251d3f604cd9",
+  "schema_hash": "sha256:d284a8e0191d0f3f7b1ff778cb027e11757097eca7468600186c0f895cdfe54c",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "params": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 102,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "include_reasoning": false
+  },
+  "cache_key": "sha256:64cbf0d51fb8678d08331c3f3f5d7bef3739ff9f114fd4c410ff8f188eaf95b5",
+  "cache_hit": false,
+  "usage": {
+    "input_tokens": 977,
+    "output_tokens": 525
+  },
+  "latency_ms": 1494,
+  "finish_reason": "stop",
+  "repaired": false,
+  "status": "ok",
+  "output": {
+    "hypotheses": [
+      {
+        "id": "H1",
+        "description": "Instabilidade na conexão causada por interferência ou sobrecarga na rede durante a noite.",
+        "evidence": [
+          {
+            "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+            "reading": "O cliente relata queda recorrente à noite e recuperação automática, indicando um padrão temporal que pode ser ligado a interferência ou congestionamento na rede."
+          }
+        ],
+        "plausibility": "medium"
+      },
+      {
+        "id": "H2",
+        "description": "Problema no equipamento interno (modem/roteador) que reinicia ou perde sinal à noite.",
+        "evidence": [
+          {
+            "quote": "A internet cai toda noite e volta sozinha depois de um tempo.",
+            "reading": "A recuperação automática pode ser um reboot do equipamento, mas o ticket não confirma falha de hardware."
+          }
+        ],
+        "plausibility": "low"
+      },
+      {
+        "id": "H3",
+        "description": "Manutenção programada ou ajuste de parâmetros pela operadora que afeta a região durante a madrugada.",
+        "evidence": [
+          {
+            "quote": "Já aconteceu várias vezes essa semana.",
+            "reading": "Repetição ao longo de dias sugere algo externo ao equipamento, porém não há confirmação de manutenção."
+          }
+        ],
+        "plausibility": "low"
+      }
+    ],
+    "missing_information": [
+      "Horário exato de início e término das quedas.",
+      "Se há luz piscando no modem/roteador durante a queda.",
+      "Se outros dispositivos também perdem conexão simultaneamente."
+    ],
+    "conclusion": {
+      "hypothesis_id": "H1",
+      "confidence": "medium",
+      "statement": "É mais provável que a queda seja por interferência ou sobrecarga na rede à noite, com confiança média. Verificar horário exato e comportamento do equipamento na próxima queda."
+    },
+    "customer_summary": "Sua internet cai à noite e volta sozinha. Vamos confirmar o horário exato e observar o modem quando isso acontecer.",
+    "escalation": {
+      "needed": false,
+      "reason": "Não há risco imediato à conta ou ao equipamento; apenas necessidade de coleta de mais dados."
+    }
+  },
+  "raw_output": null,
+  "evaluation": null
+}

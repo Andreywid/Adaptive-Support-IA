@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261123T060743Z_66efe8",
+  "timestamp": "2026-11-23T06:07:43.489376Z",
+  "customer_id": "p03_carla",
+  "ticket_id": "t02_wifi_lento",
+  "ticket": "Olá. Contratei 300 mega, mas no quarto dos fundos a velocidade não passa de 20 mega. Na sala, perto do roteador, o teste dá uns 280. Já reiniciei o roteador e nada mudou. Copiei um trecho do registro do roteador:\nwlan0: channel 6 (2.4 GHz), RSSI -78 dBm, noise -90 dBm\nwlan0: client 3C:22:FB:xx:xx:xx rate 26 Mbps\nwlan1: channel 36 (5 GHz), clients 0\nÉ problema do sinal ou da operadora?",
+  "content_type": "diagnosis",
+  "prompt_version": "v3",
+  "prompt_hash": "sha256:f8cc5fb4974abe7d2ce4c441b3d07919fd993f13d35aae125505b159c372f9f3",
+  "schema_hash": "sha256:d284a8e0191d0f3f7b1ff778cb027e11757097eca7468600186c0f895cdfe54c",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "params": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 101,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "include_reasoning": false
+  },
+  "cache_key": "sha256:9c7aa5af0f8b9da06ece7fc5e2ed3152389db948ab6e45f20c7ea312b663ef3b",
+  "cache_hit": false,
+  "usage": {
+    "input_tokens": 1067,
+    "output_tokens": 1062
+  },
+  "latency_ms": 3253,
+  "finish_reason": "stop",
+  "repaired": false,
+  "status": "ok",
+  "output": {
+    "hypotheses": [
+      {
+        "id": "H1",
+        "description": "Sinal fraco na banda de 2.4 GHz no quarto dos fundos, limitando a velocidade.",
+        "evidence": [
+          {
+            "quote": "wlan0: channel 6 (2.4 GHz), RSSI -78 dBm, noise -90 dBm",
+            "reading": "O RSSI de -78 dBm indica potência de sinal muito baixa; o ruído de -90 dBm mostra que o ambiente está relativamente silencioso, mas a relação sinal‑ruído ainda é desfavorável para altas taxas. Não prova diretamente a velocidade, mas explica a degradação observada."
+          }
+        ],
+        "plausibility": "high"
+      },
+      {
+        "id": "H2",
+        "description": "Taxa de transmissão limitada a 26 Mbps porque o cliente está conectado à banda de 2.4 GHz ou ao modo de rede do dispositivo.",
+        "evidence": [
+          {
+            "quote": "wlan0: client 3C:22:FB:xx:xx:xx rate 26 Mbps",
+            "reading": "O cliente está negociando apenas 26 Mbps, muito abaixo da capacidade da conexão contratada. Isso pode ser causado por limitações do adaptador Wi‑Fi ou por estar preso à banda de 2.4 GHz. Não indica se o roteador está configurado para usar 5 GHz ou se o dispositivo suporta."
+          }
+        ],
+        "plausibility": "medium"
+      },
+      {
+        "id": "H3",
+        "description": "A rede de 5 GHz não está sendo utilizada no quarto, possivelmente por falta de suporte do dispositivo ou má configuração do roteador.",
+        "evidence": [
+          {
+            "quote": "wlan1: channel 36 (5 GHz), clients 0",
+            "reading": "Nenhum cliente está conectado à banda de 5 GHz, o que sugere que o equipamento no quarto pode não estar habilitado para essa frequência ou que o roteador não está anunciando‑a adequadamente. Não comprova que a falta de 5 GHz seja a causa da baixa velocidade."
+          }
+        ],
+        "plausibility": "low"
+      }
+    ],
+    "missing_information": [
+      "Medição de RSSI e ruído no próprio quarto dos fundos (idealmente em diferentes pontos).",
+      "Teste de velocidade usando a banda de 5 GHz no mesmo local.",
+      "Verificação se o dispositivo cliente suporta 5 GHz e está configurado para usá‑la.",
+      "Inspeção de possíveis obstáculos físicos ou fontes de interferência entre o roteador e o quarto."
+    ],
+    "conclusion": {
+      "hypothesis_id": "H1",
+      "confidence": "medium",
+      "statement": "É mais provável que o sinal fraco na banda de 2.4 GHz esteja limitando a velocidade no quarto dos fundos, com confiança média, pois o RSSI registrado está muito baixo. O próximo passo é medir o sinal (RSSI e ruído) no próprio ambiente e, se possível, testar a conexão na banda de 5 GHz."
+    },
+    "customer_summary": "Detectamos que o sinal Wi‑Fi no quarto dos fundos está muito fraco (RSSI -78 dBm), o que pode estar reduzindo a velocidade para cerca de 20 Mbps. Por favor, faça um teste de sinal e velocidade no local, preferencialmente na banda de 5 GHz, e nos envie os resultados.",
+    "escalation": {
+      "needed": false,
+      "reason": "Não há risco imediato à conta, dados ou equipamento; apenas necessidade de coleta de informações adicionais."
+    }
+  },
+  "raw_output": null,
+  "evaluation": null
+}

@@ -1,0 +1,527 @@
+{
+  "schema_version": "1.0",
+  "comparison_id": "cmp_20261123T104921Z_0f426c55c9b6",
+  "created_at": "2026-11-23T10:49:21.474475Z",
+  "customer_id": "p01_marta",
+  "ticket_id": "t04_sem_sinal",
+  "ticket": "Desde a tempestade de ontem estou sem internet nenhuma. Uma luz vermelha ficou piscando no modem. Já desliguei e liguei duas vezes e nenhum aparelho conecta.",
+  "versions": [
+    "v3",
+    "v4"
+  ],
+  "seeds": [
+    101
+  ],
+  "content_types": [
+    "diagnosis",
+    "steps",
+    "questions",
+    "flow"
+  ],
+  "locked_config": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "include_reasoning": false
+  },
+  "schema_hashes": {
+    "diagnosis": "sha256:d284a8e0191d0f3f7b1ff778cb027e11757097eca7468600186c0f895cdfe54c",
+    "steps": "sha256:88e57f74e188e7f09bb33dcff9ad1d97b94e7a1e4af315bab802caf054c2a071",
+    "questions": "sha256:534962526ae9305d09538c1c8a661d33b47217b8bac65f590d6c221acc74ce59",
+    "flow": "sha256:12e8694d1975b2ef4424ba8be411d24b76d38258b891b8716182e7852e3fe1b8"
+  },
+  "runs": [
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "diagnosis",
+      "run_id": "20261123T104923Z_76a358",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "hypotheses": [
+          {
+            "id": "H1",
+            "description": "Falha de energia ou dano ao equipamento causado pela tempestade.",
+            "evidence": [
+              {
+                "quote": "Desde a tempestade de ontem estou sem internet nenhuma. Uma luz vermelha ficou piscando no modem.",
+                "reading": "O cliente relata que a falta de internet começou após a tempestade e que o modem está com luz vermelha piscando, indicando possível problema de energia ou dano físico ao equipamento."
+              }
+            ],
+            "plausibility": "high"
+          },
+          {
+            "id": "H2",
+            "description": "Interrupção no serviço da operadora na região devido à tempestade.",
+            "evidence": [
+              {
+                "quote": "Desde a tempestade de ontem estou sem internet nenhuma.",
+                "reading": "A falta de internet coincidiu com a tempestade, o que pode indicar queda geral na rede da operadora. Não há confirmação de que outros clientes estejam afetados."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "H3",
+            "description": "Cabo de fibra óptica ou conexão externa danificada pela tempestade.",
+            "evidence": [
+              {
+                "quote": "Uma luz vermelha ficou piscando no modem.",
+                "reading": "A luz vermelha pode sinalizar perda de sinal na fibra. O ticket não descreve o estado do cabo ou da tomada externa."
+              }
+            ],
+            "plausibility": "low"
+          }
+        ],
+        "missing_information": [
+          "Verificar se há energia elétrica estável no ponto de alimentação do modem.",
+          "Consultar se há registro de queda de serviço na região.",
+          "Inspecionar visualmente o cabo de fibra e a conexão externa."
+        ],
+        "conclusion": {
+          "hypothesis_id": "H1",
+          "confidence": "high",
+          "statement": "É mais provável que o modem tenha sido afetado pela tempestade. Primeiro, confirme se o equipamento está recebendo energia correta."
+        },
+        "customer_summary": "Sua internet parou após a tempestade e o modem está com luz vermelha piscando. Vamos checar se o modem está recebendo energia.",
+        "escalation": {
+          "needed": false,
+          "reason": "Nenhum risco imediato à conta ou ao equipamento foi identificado; apenas verificação de energia do modem."
+        }
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:718b8899786b83a6e88155382def3f65a1882aef7dd32b171a7e29035f06b29a"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "diagnosis",
+      "run_id": "20261123T105011Z_098e6f",
+      "cache_hit": false,
+      "status": "invalid_output",
+      "output": null,
+      "raw_output": "{\n  \"hypotheses\": [\n    {\n      \"id\": \"H1\",\n      \"description\": \"Falha na linha ou alimentação causada pela tempestade.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Desde a tempestade de ontem estou sem internet nenhuma.\",\n          \"reading\": \"O cliente relata perda total após a tempestade, indicando possível dano externo à linha ou à energia.\"\n        }\n      ],\n      \"plausibility\": \"medium\"\n    },\n    {\n      \"id\": \"H2\",\n      \"description\": \"Defeito no modem, indicado pela luz vermelha piscando.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Uma luz vermelha ficou piscando no modem.\",\n          \"reading\": \"A luz vermelha piscando costuma sinalizar erro interno do equipamento, mas ainda não confirma a origem exata.\"\n        }\n      ],\n      \"plausibility\": \"medium\"\n    },\n    {\n      \"id\": \"H3\",\n      \"description\": \"Interrupção geral do serviço na região.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Nenhum aparelho conecta.\",\n          \"reading\": \"Nenhum dispositivo está recebendo sinal, o que pode ser causado por queda de serviço na área.\"\n        }\n      ],\n      \"plausibility\": \"low\"\n    }\n  ],\n  \"missing_information\": [\n    \"Outros clientes na mesma região estão com o mesmo problema?\",\n    \"A tomada onde o modem está conectado tem energia (luz de alimentação acesa)?\",\n    \"A luz vermelha está piscando continuamente ou em padrão intermitente?\"\n  ],\n  \"conclusion\": {\n    \"hypothesis_id\": \"H1\",\n    \"confidence\": \"medium\",\n    \"statement\": \"É mais provável que a tempestade tenha causado falha na linha ou na alimentação. Verifique se o modem está recebendo energia e se a luz de energia está acesa.\"\n  },\n  \"customer_summary\": \"Você está sem internet desde a tempestade e a luz vermelha do modem está piscando. Vamos confirmar se o modem tem energia e se a luz de energia está acesa.\",\n  \"escalation\": {\n    \"needed\": false,\n    \"reason\": \"Não há risco imediato ao cliente; a verificação pode ser feita pelo atendente antes de escalar.\"\n  }\n}",
+      "prompt_hash": "sha256:03ff81aa634e5e2b115db29126e64617e5a737d0506da77ac4f26a00f13fbef1"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "steps",
+      "run_id": "20261123T105034Z_7336c6",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Olá, Marta. Entendo que a internet parou após a tempestade e a luz do modem está piscando em vermelho.",
+        "steps": [
+          {
+            "action": "A luz do modem continua piscando em vermelho?",
+            "expected_result": "Se a luz ainda pisca, anotamos que o equipamento está indicando falha de conexão.",
+            "if_fails": "Se a luz mudou ou apagou, registre a nova cor ou ausência de luz e passe a informação ao atendente."
+          },
+          {
+            "action": "Algum aparelho da sua casa está conseguindo conectar à internet?",
+            "expected_result": "Se nenhum aparelho conecta, confirmamos que o problema afeta todos os dispositivos.",
+            "if_fails": "Se algum aparelho ainda funciona, anote qual e continue a triagem para identificar se o problema é parcial."
+          },
+          {
+            "action": "Vamos fazer um teste rápido: desconecte o cabo de energia do modem, aguarde 30 segundos e conecte novamente.",
+            "expected_result": "Se a luz ficar verde ou azul estável, a conexão pode ter sido restabelecida.",
+            "if_fails": "Se a luz permanecer vermelha piscando, registre essa observação e informe ao atendente para prosseguir com a verificação de sinal."
+          }
+        ],
+        "closing": "Anote o que aconteceu após cada passo e informe ao atendente. Caso a luz continue vermelha ou a internet não volte, o próximo passo será a verificação de sinal da linha.",
+        "escalation_condition": "Encaminhar se a luz permanecer vermelha piscando após o reinício ou se houver falha em todos os aparelhos mesmo após o teste.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:e6a97f6c0580df5ddd78930d59976dc339a87ea97254323bffdd4cf7263468c5"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "steps",
+      "run_id": "20261123T105058Z_c06475",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Entendo, Marta, que a internet parou após a tempestade e a luz vermelha do modem está piscando.",
+        "steps": [
+          {
+            "action": "Observe a luz vermelha: ela está piscando continuamente ou pisca em intervalos curtos?",
+            "expected_result": "Se a luz piscar continuamente, indica falha de sinal; se piscar em intervalos curtos, pode ser reinicialização.",
+            "if_fails": "Anote como a luz se comporta e informe ao atendente."
+          },
+          {
+            "action": "Desconecte o cabo de energia do modem, aguarde 30 segundos e reconecte.",
+            "expected_result": "A luz deve mudar para verde fixa ou azul, indicando que o modem está tentando se conectar.",
+            "if_fails": "Se a luz permanecer vermelha piscando, registre essa informação."
+          },
+          {
+            "action": "Verifique se algum outro aparelho (por exemplo, um celular conectado ao Wi‑Fi) mostra alguma luz ou mensagem de conexão.",
+            "expected_result": "Se nenhum aparelho detectar sinal, confirma que o problema está na linha do provedor.",
+            "if_fails": "Caso algum aparelho indique conexão parcial, informe ao atendente para investigação de rede interna."
+          }
+        ],
+        "closing": "Anote o que observou em cada passo e informe ao atendente. Caso a luz continue vermelha piscando, o próximo contato será para abrir verificação de linha.",
+        "escalation_condition": "Encaminhar se a luz vermelha permanecer piscando após a tentativa de reinício ou se houver indicação de falha de sinal na linha.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:a3ed209cba5cc3da0f18e1b7b0cab0e3b00a92c58edf2ff1be47c406985ad9f4"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "questions",
+      "run_id": "20261123T105121Z_65d92c",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "A internet voltou a funcionar agora?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se Sim, encerra o atendimento ou verifica outra causa; se Não, continua a investigação."
+          },
+          {
+            "priority": 2,
+            "text": "Todos os seus aparelhos (celular, computador, TV) estão sem conexão?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se Sim, indica falha geral no modem; se Não, indica problema localizado em um aparelho."
+          },
+          {
+            "priority": 3,
+            "text": "A luz vermelha ainda está piscando no modem?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se Sim, confirma falha de sinal; se Não, pode ser outro tipo de erro; se Não sei, orienta a observar novamente."
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:a856ee8ed8a087d537a0498992c03b3f2687badf697956a0655e4710c3d5bc18"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "questions",
+      "run_id": "20261123T105144Z_e7cb8c",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "A luz vermelha está piscando continuamente ou em intervalos?",
+            "kind": "choice",
+            "options": [
+              "contínua",
+              "intermitente",
+              "não sei"
+            ],
+            "resolves": "Se for contínua, indica falha de sincronização; se for intermitente, pode ser perda de sinal. A resposta define se verificamos a conexão da fibra ou reiniciamos o modem novamente."
+          },
+          {
+            "priority": 2,
+            "text": "A luz de energia do modem está acesa?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se estiver acesa, o modem tem alimentação; se não, precisamos checar a tomada ou o cabo de energia antes de prosseguir."
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:17c4665046ef89c348f2b1591841ce3cbf09bb56b259777fc925c1a7ce2300c0"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "flow",
+      "run_id": "20261123T105209Z_49f152",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "P1",
+            "kind": "question",
+            "text": "A luz vermelha ainda está piscando agora?"
+          },
+          {
+            "id": "F1",
+            "kind": "end",
+            "text": "Serviço voltou. Observe se nova queda ocorre e registre a recorrência."
+          },
+          {
+            "id": "P2",
+            "kind": "question",
+            "text": "Algum outro aparelho consegue conectar à internet?"
+          },
+          {
+            "id": "A1",
+            "kind": "action",
+            "text": "Oriente o cliente a reiniciar o modem novamente."
+          },
+          {
+            "id": "P4",
+            "kind": "question",
+            "text": "A luz ficou verde ou parou de piscar?"
+          },
+          {
+            "id": "F2",
+            "kind": "end",
+            "text": "Internet restabelecida. Peça ao cliente observar nova queda e registrar."
+          },
+          {
+            "id": "P5",
+            "kind": "question",
+            "text": "Consegue testar a conexão usando outro cabo Ethernet?"
+          },
+          {
+            "id": "A2",
+            "kind": "action",
+            "text": "Oriente o cliente a reiniciar o modem novamente."
+          },
+          {
+            "id": "P6",
+            "kind": "question",
+            "text": "A luz ficou verde ou parou de piscar?"
+          },
+          {
+            "id": "F3",
+            "kind": "end",
+            "text": "Encaminhar para avaliação técnica. Registrar luz vermelha piscando e falha em todos os aparelhos."
+          }
+        ],
+        "edges": [
+          {
+            "source": "P1",
+            "target": "F1",
+            "label": "Não"
+          },
+          {
+            "source": "P1",
+            "target": "P2",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "A1",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "P5",
+            "label": "Não"
+          },
+          {
+            "source": "A1",
+            "target": "P4",
+            "label": "próximo"
+          },
+          {
+            "source": "P4",
+            "target": "F2",
+            "label": "Sim"
+          },
+          {
+            "source": "P4",
+            "target": "F3",
+            "label": "Não"
+          },
+          {
+            "source": "P5",
+            "target": "A2",
+            "label": "Sim"
+          },
+          {
+            "source": "P5",
+            "target": "F3",
+            "label": "Não"
+          },
+          {
+            "source": "A2",
+            "target": "P6",
+            "label": "próximo"
+          },
+          {
+            "source": "P6",
+            "target": "F2",
+            "label": "Sim"
+          },
+          {
+            "source": "P6",
+            "target": "F3",
+            "label": "Não"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:889b12f5ff37543b62fbabb1243e0e41ddb5afc8e13b645d9357783a1407d805"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "flow",
+      "run_id": "20261123T105234Z_dad614",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "P1",
+            "kind": "question",
+            "text": "A luz vermelha ainda está piscando no modem?"
+          },
+          {
+            "id": "A1",
+            "kind": "action",
+            "text": "Verifique se o cabo de energia está bem conectado ao modem e à tomada."
+          },
+          {
+            "id": "P2",
+            "kind": "question",
+            "text": "Depois de reconectar o cabo, a luz vermelha parou de piscar?"
+          },
+          {
+            "id": "P3",
+            "kind": "question",
+            "text": "A luz verde de internet está acesa?"
+          },
+          {
+            "id": "A2",
+            "kind": "action",
+            "text": "Desconecte o cabo de rede do modem, aguarde 10 segundos e reconecte."
+          },
+          {
+            "id": "P4",
+            "kind": "question",
+            "text": "A luz verde de internet apareceu?"
+          },
+          {
+            "id": "F1",
+            "kind": "end",
+            "text": "A internet voltou. Encerrar atendimento."
+          },
+          {
+            "id": "F2",
+            "kind": "end",
+            "text": "Modem sem luz vermelha. Aguarde alguns minutos para a conexão."
+          },
+          {
+            "id": "F3",
+            "kind": "end",
+            "text": "Sinal de internet presente. Verifique se o problema é apenas no Wi‑Fi."
+          },
+          {
+            "id": "F4",
+            "kind": "end",
+            "text": "Sinal de internet retornou. Teste a conexão nos aparelhos."
+          },
+          {
+            "id": "F5",
+            "kind": "end",
+            "text": "Avaliação técnica – registrar luz vermelha piscando, cabo de energia verificado, luz verde ausente."
+          }
+        ],
+        "edges": [
+          {
+            "source": "P1",
+            "target": "A1",
+            "label": "Sim"
+          },
+          {
+            "source": "P1",
+            "target": "F1",
+            "label": "Não"
+          },
+          {
+            "source": "A1",
+            "target": "P2",
+            "label": ""
+          },
+          {
+            "source": "P2",
+            "target": "F2",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "P3",
+            "label": "Não"
+          },
+          {
+            "source": "P3",
+            "target": "F3",
+            "label": "Sim"
+          },
+          {
+            "source": "P3",
+            "target": "A2",
+            "label": "Não"
+          },
+          {
+            "source": "A2",
+            "target": "P4",
+            "label": ""
+          },
+          {
+            "source": "P4",
+            "target": "F4",
+            "label": "Sim"
+          },
+          {
+            "source": "P4",
+            "target": "F5",
+            "label": "Não"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:cbbe7a9e82a0fc516c6598b9f2ae45f2e3c29708670350b4ff058f2848414dfa"
+    }
+  ],
+  "blind_seed": 448914,
+  "blind_map": [
+    {
+      "content_type": "diagnosis",
+      "seed": 101,
+      "a": "v3",
+      "b": "v4"
+    },
+    {
+      "content_type": "steps",
+      "seed": 101,
+      "a": "v4",
+      "b": "v3"
+    },
+    {
+      "content_type": "questions",
+      "seed": 101,
+      "a": "v3",
+      "b": "v4"
+    },
+    {
+      "content_type": "flow",
+      "seed": 101,
+      "a": "v4",
+      "b": "v3"
+    }
+  ],
+  "evaluations": [],
+  "profile": {
+    "id": "p01_marta",
+    "name": "Marta",
+    "technical_level": "leigo",
+    "communication_style": "didatico",
+    "channel": "telefone"
+  },
+  "rubric": "Clareza (clarity)\n  1: Desorganizado, contraditório ou ambíguo em ponto central.\n  3: Compreensível, com 1 ou 2 trechos ambíguos.\n  5: Cada item tem um só sentido, em ordem lógica, sem redundância.\n  2 e 4: entre as âncoras vizinhas.\n\nAdequação ao nível do cliente (customer_fit)\n  1: Registro errado para o perfil (ex.: comando de terminal para leigo ao telefone).\n  3: Adequado na maior parte, com 1 ou 2 desvios (ex.: jargão sem explicação).\n  5: Vocabulário, profundidade e formato combinam com nível, estilo e canal em todos os itens.\n  2 e 4: entre as âncoras vizinhas.\n\nAcionabilidade (actionability)\n  1: Não dá para saber o que fazer.\n  3: Próximo passo claro, sem critério de sucesso nem alternativa.\n  5: Próximo passo inequívoco, com resultado esperado e o que fazer se falhar.\n  2 e 4: entre as âncoras vizinhas."
+}

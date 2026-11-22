@@ -1,0 +1,538 @@
+{
+  "schema_version": "1.0",
+  "comparison_id": "cmp_20261123T110047Z_e2eb4af64202",
+  "created_at": "2026-11-23T11:00:47.432423Z",
+  "customer_id": "p02_rafael",
+  "ticket_id": "t07_cobranca_senha",
+  "ticket": "Mudei de plano no mês passado, a internet ficou mais lenta e ainda veio cobrança em dobro. Quero meu dinheiro de volta hoje. Se precisar entrar na conta, minha senha do aplicativo é [credencial removida].",
+  "versions": [
+    "v3",
+    "v4"
+  ],
+  "seeds": [
+    101
+  ],
+  "content_types": [
+    "diagnosis",
+    "steps",
+    "questions",
+    "flow"
+  ],
+  "locked_config": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "include_reasoning": false
+  },
+  "schema_hashes": {
+    "diagnosis": "sha256:d284a8e0191d0f3f7b1ff778cb027e11757097eca7468600186c0f895cdfe54c",
+    "steps": "sha256:88e57f74e188e7f09bb33dcff9ad1d97b94e7a1e4af315bab802caf054c2a071",
+    "questions": "sha256:534962526ae9305d09538c1c8a661d33b47217b8bac65f590d6c221acc74ce59",
+    "flow": "sha256:12e8694d1975b2ef4424ba8be411d24b76d38258b891b8716182e7852e3fe1b8"
+  },
+  "runs": [
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "diagnosis",
+      "run_id": "20261123T110049Z_c7da45",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "hypotheses": [
+          {
+            "id": "H1",
+            "description": "Alteração de plano causou mudança de velocidade contratada ou necessidade de reconfiguração do roteador.",
+            "evidence": [
+              {
+                "quote": "Mudei de plano no mês passado, a internet ficou mais lenta",
+                "reading": "O cliente relata que após mudar de plano a velocidade diminuiu, indicando possível ajuste de velocidade ou configuração."
+              }
+            ],
+            "plausibility": "high"
+          },
+          {
+            "id": "H2",
+            "description": "Cobrança em dobro pode ser erro de faturamento ou plano duplicado.",
+            "evidence": [
+              {
+                "quote": "ainda veio cobrança em dobro",
+                "reading": "O cliente percebeu duas cobranças, sugerindo falha no sistema de faturamento."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "H3",
+            "description": "Possível comprometimento de conta por compartilhamento de senha.",
+            "evidence": [
+              {
+                "quote": "Se precisar entrar na conta, minha senha do aplicativo é [credencial removida]",
+                "reading": "O cliente forneceu a senha, o que indica risco de segurança, mas não prova que a conta foi comprometida."
+              }
+            ],
+            "plausibility": "low"
+          }
+        ],
+        "missing_information": [
+          "Velocidade contratada no novo plano vs velocidade medida.",
+          "Detalhes da cobrança (datas, valores, fatura).",
+          "Confirmação de uso de outro dispositivo ou login não autorizado."
+        ],
+        "conclusion": {
+          "hypothesis_id": "H1",
+          "confidence": "high",
+          "statement": "É mais provável que a mudança de plano tenha alterado a velocidade contratada ou exigido reconfiguração do roteador. Verificar a velocidade contratada e testar a conexão atual."
+        },
+        "customer_summary": "Você notou internet mais lenta após mudar de plano e cobrança em dobro. Vamos confirmar a velocidade contratada e analisar a fatura.",
+        "escalation": {
+          "needed": false,
+          "reason": "Nenhum risco imediato à conta ou equipamento foi identificado; apenas necessidade de verificação de plano e faturamento."
+        }
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:c2e1d2f1212e06b0f95ce88480c5327a3a7f2612040cd19bedf435f07b28784c"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "diagnosis",
+      "run_id": "20261123T110113Z_7f55b1",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "hypotheses": [
+          {
+            "id": "H1",
+            "description": "O novo plano contratado possui velocidade menor que o plano anterior.",
+            "evidence": [
+              {
+                "quote": "Mudei de plano no mês passado, a internet ficou mais lenta",
+                "reading": "O cliente relata que, após a mudança de plano, percebeu redução de velocidade. Não comprova que o plano atual tem menor velocidade, apenas indica correlação."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "H2",
+            "description": "Foi gerada uma cobrança duplicada na fatura.",
+            "evidence": [
+              {
+                "quote": "ainda veio cobrança em dobro",
+                "reading": "O cliente afirma que recebeu duas cobranças. Não confirma se são realmente duplicadas ou de serviços diferentes."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "H3",
+            "description": "Configurações do roteador ou Wi‑Fi foram alteradas após a troca de plano, impactando a performance.",
+            "evidence": [
+              {
+                "quote": "a internet ficou mais lenta",
+                "reading": "A lentidão pode ser causada por configuração de equipamento, mas o relato não menciona testes ou alterações no roteador."
+              }
+            ],
+            "plausibility": "low"
+          }
+        ],
+        "missing_information": [
+          "Qual a velocidade medida atualmente (teste de velocidade).",
+          "Detalhes da fatura que comprovem a duplicidade da cobrança.",
+          "Outros dispositivos também apresentam lentidão?"
+        ],
+        "conclusion": {
+          "hypothesis_id": "H1",
+          "confidence": "medium",
+          "statement": "É mais provável que a redução de velocidade esteja relacionada ao novo plano. Primeiro, peça ao cliente um teste de velocidade para comparar com a velocidade contratada."
+        },
+        "customer_summary": "Você mudou de plano e percebeu a internet mais lenta. Vamos fazer um teste de velocidade para confirmar se está dentro do que o plano oferece.",
+        "escalation": {
+          "needed": false,
+          "reason": "Não há risco imediato à conta ou ao equipamento, apenas necessidade de coleta de informações adicionais."
+        }
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:b620503a8d3abbc25194f7413217a035da385556f14f38cbd0236236fb60ca56"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "steps",
+      "run_id": "20261123T110137Z_888f40",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Olá Rafael, identifiquei sua mudança de plano e a cobrança em duplicidade. Vamos verificar a velocidade da sua conexão.",
+        "steps": [
+          {
+            "action": "Por favor, verifique se o Wi‑Fi está lento em mais de um dispositivo ao mesmo tempo.",
+            "expected_result": "Se todos os aparelhos apresentarem a mesma lentidão, isso indica que o problema está na conexão da sua linha.",
+            "if_fails": "Se apenas um aparelho estiver lento, anote qual modelo e continue para o próximo passo."
+          },
+          {
+            "action": "Agora, faça um teste de velocidade no site speedtest.net e me informe o valor que apareceu.",
+            "expected_result": "Se a velocidade mostrada estiver bem abaixo do que seu novo plano oferece, isso confirma a degradação da internet.",
+            "if_fails": "Se a velocidade estiver dentro do esperado, registre que a lentidão não foi confirmada e passe para a verificação da cobrança."
+          },
+          {
+            "action": "Sobre a cobrança em dobro, você recebeu dois boletos ou duas faturas no mesmo período?",
+            "expected_result": "Se houver dois documentos de cobrança, anote os números e datas para que o atendente possa analisar.",
+            "if_fails": "Se não houver duplicidade nos documentos, registre que a cobrança parece correta e informe ao atendente."
+          }
+        ],
+        "closing": "Com as informações coletadas, o atendente poderá validar a velocidade da sua linha e a cobrança. Por favor, aguarde a análise para que possamos prosseguir.",
+        "escalation_condition": "Encaminhar caso a velocidade esteja abaixo do contratado ou se houver comprovante de cobrança duplicada, trazendo os resultados do teste de velocidade e os números das faturas.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:3008edea52d9c952f69fa3e03981d0e32ba1ae6c107b090516dbb4c4f852e1d9"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "steps",
+      "run_id": "20261123T110200Z_8cedda",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Olá Rafael, entendo que a velocidade da internet mudou após a troca de plano e que houve cobrança duplicada.",
+        "steps": [
+          {
+            "action": "A internet está lenta agora? Por favor, faça um teste rápido de navegação ou um speed test e me informe o resultado.",
+            "expected_result": "Se a velocidade estiver abaixo do esperado, confirmamos que o problema está ativo.",
+            "if_fails": "Se a velocidade estiver normal, informe que está tudo OK no momento."
+          },
+          {
+            "action": "Esse desempenho está acontecendo em todos os seus dispositivos ou apenas em algum específico?",
+            "expected_result": "Se todos os dispositivos apresentarem lentidão, o problema é geral; se só um, pode ser local.",
+            "if_fails": "Caso não consiga testar outro dispositivo, registre que só um foi testado."
+          },
+          {
+            "action": "Desligue o roteador da tomada, aguarde 30 segundos e ligue novamente. Depois, verifique se a velocidade melhorou.",
+            "expected_result": "Se a conexão voltar ao normal, o reinício resolveu o problema.",
+            "if_fails": "Se a lentidão permanecer, registre o resultado e informe que o teste não resolveu."
+          }
+        ],
+        "closing": "Anote os resultados dos testes e, caso a lentidão continue ou a cobrança duplicada não seja regularizada, prossiga com a abertura de um chamado interno.",
+        "escalation_condition": "Encaminhar se a velocidade ainda estiver abaixo do contratado após o reinício ou se a cobrança em duplicidade persistir. Levar ao próximo nível as observações de velocidade, dispositivos afetados e resultados dos testes.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:c79049e19f24fcd5c850c441e1ec08406d649c05ee6539b76622d861e8f5ba7a"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "questions",
+      "run_id": "20261123T110223Z_7d84e8",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "A internet está funcionando agora?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se a resposta for 'Sim', avançamos para verificar se a lentidão ocorre em mais de um aparelho. Se 'Não', orientamos a reinicializar o roteador e verificamos novamente."
+          },
+          {
+            "priority": 2,
+            "text": "O problema de lentidão acontece em um aparelho ou em vários?",
+            "kind": "choice",
+            "options": [
+              "Um aparelho",
+              "Vários aparelhos",
+              "Não sei"
+            ],
+            "resolves": "Se 'Um aparelho', investigamos o dispositivo específico. Se 'Vários aparelhos' ou 'Não sei', seguimos para testes de sinal e configuração do roteador."
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:487201afcbf2cdfad1a80f79403f86f3d4a07b8f5a142bd59007103bdadcafa0"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "questions",
+      "run_id": "20261123T110247Z_0b58ff",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "A internet está lenta agora?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se sim, avançamos para a verificação do roteador e da conexão; se não, perguntamos se a lentidão ocorre em outros momentos."
+          },
+          {
+            "priority": 2,
+            "text": "A lentidão acontece em todos os seus dispositivos?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se sim, o problema é geral e investigamos o roteador/linha; se não, focamos no dispositivo que está apresentando a lentidão."
+          },
+          {
+            "priority": 3,
+            "text": "Você vê alguma luz vermelha ou apagada no roteador?",
+            "kind": "open",
+            "options": [],
+            "resolves": "A descrição das luzes indica se há falha de sinal ou necessidade de reinício do equipamento."
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:28d1e12bc1ef41a70011497425c697f9d625a3373815ce28a725d8315aab93fd"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "flow",
+      "run_id": "20261123T110316Z_e053cc",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "P1",
+            "kind": "question",
+            "text": "A internet está funcionando normalmente agora?"
+          },
+          {
+            "id": "F1",
+            "kind": "end",
+            "text": "Registre a recorrência e oriente o cliente a observar se a lentidão voltar."
+          },
+          {
+            "id": "P2",
+            "kind": "question",
+            "text": "A lentidão está ocorrendo em apenas um aparelho?"
+          },
+          {
+            "id": "A1",
+            "kind": "action",
+            "text": "Peça ao cliente reiniciar o roteador e o aparelho."
+          },
+          {
+            "id": "P3",
+            "kind": "question",
+            "text": "A velocidade melhorou após reiniciar?"
+          },
+          {
+            "id": "F2",
+            "kind": "end",
+            "text": "Registre que o problema melhorou e oriente a observar se voltar."
+          },
+          {
+            "id": "F3",
+            "kind": "end",
+            "text": "Encaminhe para avaliação técnica, registrando os testes realizados."
+          },
+          {
+            "id": "A2",
+            "kind": "action",
+            "text": "Peça ao cliente testar a internet em outro aparelho."
+          },
+          {
+            "id": "P4",
+            "kind": "question",
+            "text": "A velocidade melhorou no outro aparelho?"
+          },
+          {
+            "id": "F4",
+            "kind": "end",
+            "text": "Registre que o problema está no aparelho original e oriente a observar."
+          }
+        ],
+        "edges": [
+          {
+            "source": "P1",
+            "target": "F1",
+            "label": "Sim"
+          },
+          {
+            "source": "P1",
+            "target": "P2",
+            "label": "Não"
+          },
+          {
+            "source": "P2",
+            "target": "A1",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "A2",
+            "label": "Não"
+          },
+          {
+            "source": "A1",
+            "target": "P3",
+            "label": "próximo"
+          },
+          {
+            "source": "P3",
+            "target": "F2",
+            "label": "Sim"
+          },
+          {
+            "source": "P3",
+            "target": "F3",
+            "label": "Não"
+          },
+          {
+            "source": "A2",
+            "target": "P4",
+            "label": "próximo"
+          },
+          {
+            "source": "P4",
+            "target": "F4",
+            "label": "Sim"
+          },
+          {
+            "source": "P4",
+            "target": "F3",
+            "label": "Não"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:45e1b8414d571e035e9f83ac1b7a7e2fc390e4e79da3ae05a8928bfe39636074"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "flow",
+      "run_id": "20261123T110405Z_19613a",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "P1",
+            "kind": "question",
+            "text": "A velocidade da internet está lenta agora?"
+          },
+          {
+            "id": "A1",
+            "kind": "action",
+            "text": "Peça ao cliente que faça um teste de velocidade (speedtest) e informe o resultado."
+          },
+          {
+            "id": "P2",
+            "kind": "question",
+            "text": "O resultado do teste está abaixo da velocidade que você costuma ter?"
+          },
+          {
+            "id": "P3",
+            "kind": "question",
+            "text": "A cobrança em duplicidade ainda aparece na sua fatura?"
+          },
+          {
+            "id": "F1",
+            "kind": "end",
+            "text": "Registre que a velocidade está abaixo do esperado e encaminhe para avaliação técnica."
+          },
+          {
+            "id": "F2",
+            "kind": "end",
+            "text": "Registre que a velocidade está dentro do esperado e informe ao cliente que pode ser momentâneo."
+          },
+          {
+            "id": "F3",
+            "kind": "end",
+            "text": "Registre a cobrança duplicada e encaminhe para avaliação técnica do financeiro."
+          },
+          {
+            "id": "F4",
+            "kind": "end",
+            "text": "Registre que não há cobrança duplicada no momento e encerre o atendimento."
+          }
+        ],
+        "edges": [
+          {
+            "source": "P1",
+            "target": "A1",
+            "label": "Sim"
+          },
+          {
+            "source": "P1",
+            "target": "P3",
+            "label": "Não"
+          },
+          {
+            "source": "A1",
+            "target": "P2",
+            "label": "feito"
+          },
+          {
+            "source": "P2",
+            "target": "F1",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "F2",
+            "label": "Não"
+          },
+          {
+            "source": "P3",
+            "target": "F3",
+            "label": "Sim"
+          },
+          {
+            "source": "P3",
+            "target": "F4",
+            "label": "Não"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:9f3e7dd5c5ef14a240e1e4ca81e146896dab43378eb7d34596f90610af13ab18"
+    }
+  ],
+  "blind_seed": 516422,
+  "blind_map": [
+    {
+      "content_type": "diagnosis",
+      "seed": 101,
+      "a": "v3",
+      "b": "v4"
+    },
+    {
+      "content_type": "steps",
+      "seed": 101,
+      "a": "v4",
+      "b": "v3"
+    },
+    {
+      "content_type": "questions",
+      "seed": 101,
+      "a": "v3",
+      "b": "v4"
+    },
+    {
+      "content_type": "flow",
+      "seed": 101,
+      "a": "v4",
+      "b": "v3"
+    }
+  ],
+  "evaluations": [],
+  "profile": {
+    "id": "p02_rafael",
+    "name": "Rafael",
+    "technical_level": "intermediario",
+    "communication_style": "direto",
+    "channel": "chat"
+  },
+  "rubric": "Clareza (clarity)\n  1: Desorganizado, contraditório ou ambíguo em ponto central.\n  3: Compreensível, com 1 ou 2 trechos ambíguos.\n  5: Cada item tem um só sentido, em ordem lógica, sem redundância.\n  2 e 4: entre as âncoras vizinhas.\n\nAdequação ao nível do cliente (customer_fit)\n  1: Registro errado para o perfil (ex.: comando de terminal para leigo ao telefone).\n  3: Adequado na maior parte, com 1 ou 2 desvios (ex.: jargão sem explicação).\n  5: Vocabulário, profundidade e formato combinam com nível, estilo e canal em todos os itens.\n  2 e 4: entre as âncoras vizinhas.\n\nAcionabilidade (actionability)\n  1: Não dá para saber o que fazer.\n  3: Próximo passo claro, sem critério de sucesso nem alternativa.\n  5: Próximo passo inequívoco, com resultado esperado e o que fazer se falhar.\n  2 e 4: entre as âncoras vizinhas."
+}

@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261123T060747Z_f05032",
+  "timestamp": "2026-11-23T06:07:47.295339Z",
+  "customer_id": "p02_rafael",
+  "ticket_id": "t03_codigo_sms",
+  "ticket": "O aplicativo de vocês pede um código de verificação por SMS para entrar, mas o SMS nunca chega. Tentei umas cinco vezes hoje. O número é o mesmo do cadastro e recebo SMS de outros lugares normalmente.",
+  "content_type": "flow",
+  "prompt_version": "v3",
+  "prompt_hash": "sha256:7392c1f6063c5f71d0ad1cfb0aeaa3241b237e181422a3afd669e3c2ce74c8c3",
+  "schema_hash": "sha256:12e8694d1975b2ef4424ba8be411d24b76d38258b891b8716182e7852e3fe1b8",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "params": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 101,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "include_reasoning": false
+  },
+  "cache_key": "sha256:1638aafb19ad541e4567c2bc7d67ef4f7f8ff3c9a52c64b847d93eabde096a96",
+  "cache_hit": false,
+  "usage": {
+    "input_tokens": 983,
+    "output_tokens": 1111
+  },
+  "latency_ms": 3591,
+  "finish_reason": "stop",
+  "repaired": false,
+  "status": "ok",
+  "output": {
+    "nodes": [
+      {
+        "id": "P1",
+        "kind": "question",
+        "text": "Verifique se o SMS chegou agora."
+      },
+      {
+        "id": "F1",
+        "kind": "end",
+        "text": "SMS chegou. Registre a recorrência e oriente o cliente a observar se o problema volta."
+      },
+      {
+        "id": "P2",
+        "kind": "question",
+        "text": "O problema ocorre em outro aparelho?"
+      },
+      {
+        "id": "A1",
+        "kind": "action",
+        "text": "Registre os sinais observados e peça ao cliente que reinicie o aplicativo."
+      },
+      {
+        "id": "A2",
+        "kind": "action",
+        "text": "Peça ao cliente que reinicie o aplicativo."
+      },
+      {
+        "id": "P3",
+        "kind": "question",
+        "text": "Depois de reiniciar o app, o SMS chegou?"
+      },
+      {
+        "id": "P4",
+        "kind": "question",
+        "text": "Depois de reiniciar o app, o SMS chegou?"
+      },
+      {
+        "id": "F2",
+        "kind": "end",
+        "text": "SMS chegou após reinício. Registre a solução e oriente o cliente a observar se o problema volta."
+      },
+      {
+        "id": "F3",
+        "kind": "end",
+        "text": "SMS ainda não chega em vários aparelhos. Encaminhar para avaliação técnica e registrar a falha persistente."
+      },
+      {
+        "id": "F5",
+        "kind": "end",
+        "text": "SMS ainda não chega neste aparelho. Encaminhar para avaliação técnica e registrar a falha persistente."
+      }
+    ],
+    "edges": [
+      {
+        "source": "P1",
+        "target": "F1",
+        "label": "Sim"
+      },
+      {
+        "source": "P1",
+        "target": "P2",
+        "label": "Não"
+      },
+      {
+        "source": "P2",
+        "target": "A1",
+        "label": "Sim"
+      },
+      {
+        "source": "P2",
+        "target": "A2",
+        "label": "Não"
+      },
+      {
+        "source": "A1",
+        "target": "P3",
+        "label": ""
+      },
+      {
+        "source": "A2",
+        "target": "P4",
+        "label": ""
+      },
+      {
+        "source": "P3",
+        "target": "F2",
+        "label": "Sim"
+      },
+      {
+        "source": "P3",
+        "target": "F3",
+        "label": "Não"
+      },
+      {
+        "source": "P4",
+        "target": "F2",
+        "label": "Sim"
+      },
+      {
+        "source": "P4",
+        "target": "F5",
+        "label": "Não"
+      }
+    ]
+  },
+  "raw_output": null,
+  "evaluation": null
+}

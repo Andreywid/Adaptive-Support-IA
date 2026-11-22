@@ -1,0 +1,563 @@
+{
+  "schema_version": "1.0",
+  "comparison_id": "cmp_20261123T105704Z_cdd4cde8e65b",
+  "created_at": "2026-11-23T10:57:04.161072Z",
+  "customer_id": "p03_carla",
+  "ticket_id": "t06_latencia_jogos",
+  "ticket": "O ping nos jogos sobe de 15 ms para 180 ms quando alguém em casa envia arquivos para a nuvem. Com o PC no cabo e ninguém usando a rede, fica estável em 14 ms. O teste de download mede 480 de 500 mega.",
+  "versions": [
+    "v3",
+    "v4"
+  ],
+  "seeds": [
+    101
+  ],
+  "content_types": [
+    "diagnosis",
+    "steps",
+    "questions",
+    "flow"
+  ],
+  "locked_config": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "include_reasoning": false
+  },
+  "schema_hashes": {
+    "diagnosis": "sha256:d284a8e0191d0f3f7b1ff778cb027e11757097eca7468600186c0f895cdfe54c",
+    "steps": "sha256:88e57f74e188e7f09bb33dcff9ad1d97b94e7a1e4af315bab802caf054c2a071",
+    "questions": "sha256:534962526ae9305d09538c1c8a661d33b47217b8bac65f590d6c221acc74ce59",
+    "flow": "sha256:12e8694d1975b2ef4424ba8be411d24b76d38258b891b8716182e7852e3fe1b8"
+  },
+  "runs": [
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "diagnosis",
+      "run_id": "20261123T105706Z_a3b336",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "hypotheses": [
+          {
+            "id": "H1",
+            "description": "Congestionamento da banda larga causado por upload intenso para a nuvem, saturando a capacidade upstream e aumentando a latência (ping).",
+            "evidence": [
+              {
+                "quote": "quando alguém em casa envia arquivos para a nuvem",
+                "reading": "Indica que há tráfego de upload significativo no momento em que o ping aumenta, sugerindo que o upstream pode estar saturado, mas não prova que a saturação seja a causa única."
+              }
+            ],
+            "plausibility": "high"
+          },
+          {
+            "id": "H2",
+            "description": "Configuração ou limitação do QoS no roteador que não prioriza tráfego de jogos frente ao upload.",
+            "evidence": [
+              {
+                "quote": "quando alguém em casa envia arquivos para a nuvem",
+                "reading": "Mostra que há concorrência de tráfego, mas não confirma se o roteador está configurado para priorizar ou não o tráfego de jogos."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "H3",
+            "description": "Problema de interferência ou falha intermitente no equipamento de rede (cabo, switch ou modem) que se manifesta sob carga de upload.",
+            "evidence": [
+              {
+                "quote": "O ping nos jogos sobe de 15 ms para 180 ms quando alguém em casa envia arquivos para a nuvem.",
+                "reading": "O sintoma ocorre sob carga, mas não demonstra se a causa está no equipamento ou na conexão externa."
+              }
+            ],
+            "plausibility": "low"
+          }
+        ],
+        "missing_information": [
+          "Taxa de upload contratada e taxa real medida durante o upload para a nuvem.",
+          "Configurações de QoS ou prioridade de tráfego no roteador.",
+          "Teste de latência (ping) com tráfego de upload controlado (ex.: teste de velocidade com upload ativo) para confirmar se a saturação do upstream causa o aumento de latência."
+        ],
+        "conclusion": {
+          "hypothesis_id": "H1",
+          "confidence": "high",
+          "statement": "É mais provável que o aumento de ping seja causado pelo congestionamento do upstream durante o upload para a nuvem. Verificar a taxa de upload real e comparar com a contratada, além de medir o ping enquanto o upload está em andamento, confirmará ou descartará essa hipótese."
+        },
+        "customer_summary": "Detectamos que o ping aumenta quando há upload intenso para a nuvem, indicando possível saturação da sua conexão upstream. Por favor, realize um teste de velocidade com upload ativo e nos envie os resultados.",
+        "escalation": {
+          "needed": false,
+          "reason": "Não há risco imediato à conta ou ao equipamento; a situação pode ser resolvida com ajustes de QoS ou verificação de saturação de upload."
+        }
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:5a8fa9fa0951924d8c2c91ff89b7f67902828efc45aa5b2b2850a43468331049"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "diagnosis",
+      "run_id": "20261123T105731Z_a04933",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "hypotheses": [
+          {
+            "id": "H1",
+            "description": "O tráfego de upload está saturando a banda de subida, causando aumento de latência nos jogos.",
+            "evidence": [
+              {
+                "quote": "quando alguém em casa envia arquivos para a nuvem",
+                "reading": "O aumento de ping ocorre exatamente quando há transferência de arquivos para a nuvem, indicando que o upload está consumindo a maior parte da capacidade de subida. Ainda não prova saturação total, mas sugere correlação."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "H2",
+            "description": "Ausência de QoS ou priorização de tráfego faz o ping dos jogos ser impactado por outras transmissões.",
+            "evidence": [
+              {
+                "quote": "O ping nos jogos sobe de 15 ms para 180 ms",
+                "reading": "A variação brusca de latência demonstra que o tráfego de jogos compete com o upload. Não há informação sobre configuração de QoS, portanto a hipótese permanece plausível, porém não confirmada."
+              }
+            ],
+            "plausibility": "low"
+          },
+          {
+            "id": "H3",
+            "description": "Limitação ou sobrecarga do roteador ao lidar com múltiplas sessões simultâneas.",
+            "evidence": [
+              {
+                "quote": "Com o PC no cabo e ninguém usando a rede, fica estável em 14 ms",
+                "reading": "A estabilidade quando há apenas um dispositivo conectado sugere que o roteador pode estar tendo dificuldade em gerenciar tráfego concorrente. Não há dados sobre modelo ou carga do roteador."
+              }
+            ],
+            "plausibility": "low"
+          }
+        ],
+        "missing_information": [
+          "Qual a taxa de utilização da banda de subida durante a transferência para a nuvem?",
+          "O roteador possui QoS configurado? Se sim, quais regras estão ativas?",
+          "Quantos dispositivos estão simultaneamente ativos na rede durante o teste de ping?"
+        ],
+        "conclusion": {
+          "hypothesis_id": "H1",
+          "confidence": "medium",
+          "statement": "É mais provável que o aumento de ping seja causado pela saturação da banda de upload quando há envio de arquivos para a nuvem. Verifique a taxa de utilização da uplink durante a transferência e, se estiver próximo ao limite contratado, considere limitar a velocidade de upload ou habilitar QoS."
+        },
+        "customer_summary": "Detectamos que o ping nos jogos aumenta de 15 ms para 180 ms quando há upload de arquivos para a nuvem. Como próximo passo, monitore a utilização da sua banda de subida durante a transferência para confirmar se está saturada.",
+        "escalation": {
+          "needed": false,
+          "reason": "Não há risco imediato à conta ou ao equipamento; a situação pode ser resolvida com ajustes de configuração ou gerenciamento de tráfego."
+        }
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:2c7b3167321971183636a6df02cac0be4e33564be85f7493f2e3bd7c4222717b"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "steps",
+      "run_id": "20261123T105820Z_ad6f93",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Olá Carla, identificamos que o ping aumenta significativamente quando há upload de arquivos para a nuvem, mas permanece estável quando a rede está ociosa.",
+        "steps": [
+          {
+            "action": "Verifique se o aumento de ping ocorre em mais de um dispositivo ao mesmo tempo que o upload está em andamento.",
+            "expected_result": "Se o ping subir em todos os aparelhos, indica congestionamento da largura de banda da conexão; se só no PC, pode ser interferência local.",
+            "if_fails": "Anote quais dispositivos foram afetados e prossiga para o próximo passo."
+          },
+          {
+            "action": "Durante o upload, execute um teste de velocidade (por exemplo, speedtest) e registre a taxa de download e upload.",
+            "expected_result": "Se a velocidade de download permanecer próxima de 480 Mbps e a de upload apresentar variação, confirma que o upload está consumindo a capacidade da linha.",
+            "if_fails": "Caso a velocidade de download também caia, registre o valor e informe ao atendente para análise de possível saturação da fibra."
+          },
+          {
+            "action": "Desconecte temporariamente o cabo Ethernet do PC e conecte-o em outro ponto da rede (ou use outro cabo) para repetir o teste de ping durante o upload.",
+            "expected_result": "Se o ping permanecer baixo, o problema pode estar no cabo ou na porta do roteador; se ainda subir, a causa está na largura de banda disponível.",
+            "if_fails": "Registre o resultado e, se houver diferença, informe ao atendente para inspeção física do cabeamento."
+          },
+          {
+            "action": "Se possível, reduza a taxa de upload do aplicativo de nuvem (por exemplo, configurando um limite no próprio programa) e verifique se o ping volta ao normal.",
+            "expected_result": "Com o upload limitado, o ping deve permanecer próximo de 15 ms, indicando que a saturação da banda é a origem da latência.",
+            "if_fails": "Caso o ping ainda aumente, registre a observação e informe que o problema persiste mesmo com limite de upload."
+          },
+          {
+            "action": "Caso o problema ocorra novamente, anote a hora exata, o tipo de arquivo enviado e o valor do ping observado.",
+            "expected_result": "Essas informações permitirão correlacionar picos de latência com atividades específicas e facilitarão a análise posterior.",
+            "if_fails": "Se não houver nova ocorrência, informe ao atendente que o teste foi concluído sem novos incidentes."
+          }
+        ],
+        "closing": "Agradecemos sua colaboração, Carla. Por favor, envie as observações coletadas respondendo a este e‑mail ou abra um novo ticket caso o problema volte a acontecer.",
+        "escalation_condition": "Encaminhar para nível avançado se o ping permanecer elevado em mais de um dispositivo mesmo com redução de taxa de upload, ou se houver queda de velocidade de download durante o upload.",
+        "subject": "Instabilidade de ping durante transferência de arquivos"
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:f448d9055cdd2bc8327641ef7165612c8888369a540615fd0396d58d1671e084"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "steps",
+      "run_id": "20261123T105908Z_e49aa8",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Olá Carla, agradecemos o detalhamento das medições. Identificamos que o aumento de ping ocorre quando há tráfego de upload para a nuvem, enquanto a conexão cabeada apresenta latência estável.",
+        "steps": [
+          {
+            "action": "Verifique a utilização da largura de banda da sua conexão durante o upload: abra o gerenciador de tarefas ou um monitor de rede e anote a taxa de upload em Mbps enquanto o arquivo está sendo enviado.",
+            "expected_result": "Se a taxa de upload estiver próxima da capacidade contratada (≈ 500 Mbps), isso indica saturação da via de subida, o que costuma elevar o ping.",
+            "if_fails": "Caso a taxa de upload esteja bem abaixo da capacidade, registre o valor observado e prossiga para o próximo passo."
+          },
+          {
+            "action": "Teste a latência com o upload interrompido: pare o envio de arquivos e execute um ping contínuo (por exemplo, ping -t 8.8.8.8) por 2 minutos.",
+            "expected_result": "O ping deve permanecer próximo de 15 ms, confirmando que a rede está estável sem tráfego de upload.",
+            "if_fails": "Se o ping ainda variar significativamente, registre as variações e informe que a instabilidade persiste mesmo sem upload."
+          },
+          {
+            "action": "Reinicie temporariamente o roteador (desligue por 30 s e ligue novamente) e repita o teste de upload enquanto monitora o ping.",
+            "expected_result": "Se o ping permanecer baixo durante o upload após o reboot, pode indicar que o roteador estava com alguma fila ou buffer congestionado.",
+            "if_fails": "Se o ping ainda subir para valores semelhantes aos observados (cerca de 180 ms), anote o horário, a taxa de upload e o valor de ping observado; isso será útil para escalonamento."
+          }
+        ],
+        "closing": "Por favor, envie os resultados dos testes e quaisquer observações adicionais (taxas de upload, valores de ping, horário dos picos). Assim poderemos analisar se há necessidade de ajustes na configuração ou de verificação de qualidade da linha.",
+        "escalation_condition": "Encaminhar caso o ping continue alto (próximo a 180 ms) durante upload mesmo após o reboot do roteador, ou se a taxa de upload estiver abaixo da velocidade contratada e ainda assim houver aumento de latência. Incluir nos registros: horário dos testes, valores de ping, taxa de upload e modelo do roteador.",
+        "subject": "Instabilidade de ping durante upload de arquivos – análise e próximos passos"
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:887fa666c7f1d54c8f23db997d94953545c744c2b9605e3b3de6dabec5b6a6bf"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "questions",
+      "run_id": "20261123T105931Z_4c5968",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "No momento o jogo está apresentando latência alta ou está estável?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se a latência ainda subir, indica que o problema persiste e devemos avançar para testes de congestionamento; se estiver estável, podemos focar em reproduzir a situação de transferência de arquivos."
+          },
+          {
+            "priority": 2,
+            "text": "A variação de ping ocorre em apenas um dispositivo ou em vários aparelhos conectados à rede?",
+            "kind": "choice",
+            "options": [
+              "Só neste PC",
+              "Em vários dispositivos",
+              "Não tenho certeza"
+            ],
+            "resolves": "Se for só neste PC, investigaremos configuração ou driver da placa de rede; se for em vários dispositivos, o problema está na rede/roteador ou no tráfego de upload."
+          },
+          {
+            "priority": 3,
+            "text": "Qual o horário aproximado em que você percebe o aumento de ping ao enviar arquivos para a nuvem?",
+            "kind": "open",
+            "options": [],
+            "resolves": "Identificar o período ajuda a correlacionar com possíveis picos de uso da conexão ou tarefas agendadas no roteador."
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:75ec4e22a2cb858829dd3eef50891f790abc17cafabea6abfd2aad7c18f8e7ad"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "questions",
+      "run_id": "20261123T105955Z_58e836",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "Qual é a taxa de upload medida (em Mbps) enquanto alguém está enviando arquivos para a nuvem?",
+            "kind": "open",
+            "options": [],
+            "resolves": "Se a taxa de upload estiver próxima do limite contratado, a latência alta nos jogos provavelmente é causada por saturação da banda de upload; a próxima ação será orientar a configurar QoS ou limitar o upload. Se a taxa de upload estiver bem abaixo do limite, a causa provável não é saturação de upload e será necessário investigar outros fatores (por exemplo, interferência no roteador ou configuração de fila)."
+          },
+          {
+            "priority": 2,
+            "text": "O seu roteador tem alguma política de QoS (Qualidade de Serviço) habilitada?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se a resposta for \"Sim\", a próxima ação será revisar a configuração de QoS para garantir que o tráfego de jogos tenha prioridade sobre o upload. Se a resposta for \"Não\", a próxima ação será instruir a habilitar QoS ou criar regras de prioridade para o tráfego de jogos."
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:1092b366320861e6685aba3e817608c2919610ba7343331559d638f75042709b"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "flow",
+      "run_id": "20261123T110021Z_b14b6a",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "P1",
+            "kind": "question",
+            "text": "O serviço está funcionando normalmente agora?"
+          },
+          {
+            "id": "F1",
+            "kind": "end",
+            "text": "Serviço está estável. Registre a recorrência e oriente a observar aumento de ping ao enviar arquivos para a nuvem."
+          },
+          {
+            "id": "P2",
+            "kind": "question",
+            "text": "A latência alta está ocorrendo apenas no PC conectado por cabo?"
+          },
+          {
+            "id": "A1",
+            "kind": "action",
+            "text": "Solicite ao cliente executar teste de ping contínuo e teste de velocidade enquanto realiza upload para a nuvem, anotando valores de latência."
+          },
+          {
+            "id": "F2",
+            "kind": "end",
+            "text": "Resultados anotados. Registre os valores e encaminhe para avaliação técnica."
+          },
+          {
+            "id": "P3",
+            "kind": "question",
+            "text": "A latência alta está ocorrendo em vários dispositivos (Wi‑Fi ou cabo)?"
+          },
+          {
+            "id": "F3",
+            "kind": "end",
+            "text": "Registre que múltiplos dispositivos apresentam latência alta, peça detalhes dos testes realizados e encaminhe para avaliação técnica."
+          },
+          {
+            "id": "A2",
+            "kind": "action",
+            "text": "Peça ao cliente realizar teste de ping em outro aparelho (ex.: smartphone) enquanto há transferência de arquivos."
+          },
+          {
+            "id": "F4",
+            "kind": "end",
+            "text": "Anote que não foi possível confirmar quantos dispositivos são afetados e encaminhe para avaliação técnica."
+          }
+        ],
+        "edges": [
+          {
+            "source": "P1",
+            "target": "F1",
+            "label": "Sim"
+          },
+          {
+            "source": "P1",
+            "target": "P2",
+            "label": "Não"
+          },
+          {
+            "source": "P2",
+            "target": "A1",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "P3",
+            "label": "Não"
+          },
+          {
+            "source": "A1",
+            "target": "F2",
+            "label": "Concluído"
+          },
+          {
+            "source": "P3",
+            "target": "F3",
+            "label": "Sim"
+          },
+          {
+            "source": "P3",
+            "target": "A2",
+            "label": "Não"
+          },
+          {
+            "source": "A2",
+            "target": "F4",
+            "label": "Concluído"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:5d04f0dc1bb8f2afad7fe5decef6198aaeba25d062f70d07951736ce11406a00"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "flow",
+      "run_id": "20261123T110047Z_61fca0",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "P1",
+            "kind": "question",
+            "text": "A transferência de arquivos para a nuvem está ocorrendo neste momento?"
+          },
+          {
+            "id": "A1",
+            "kind": "action",
+            "text": "Meça o ping nos jogos enquanto o upload continua e anote os valores (ex.: 15 ms → 180 ms)."
+          },
+          {
+            "id": "F1",
+            "kind": "end",
+            "text": "Observado aumento de ping durante upload indica saturação de upstream; recomenda‑se habilitar QoS ou limitar a taxa de upload."
+          },
+          {
+            "id": "P2",
+            "kind": "question",
+            "text": "Existem outros dispositivos conectados via Wi‑Fi usando a rede ao mesmo tempo?"
+          },
+          {
+            "id": "A3",
+            "kind": "action",
+            "text": "Desconecte temporariamente os dispositivos Wi‑Fi e repita o teste de ping durante o upload."
+          },
+          {
+            "id": "F2",
+            "kind": "end",
+            "text": "Se o ping permanecer estável, o congestionamento está relacionado ao Wi‑Fi; sugere‑se usar conexão cabeada ou ajustar canais."
+          },
+          {
+            "id": "P3",
+            "kind": "question",
+            "text": "O roteador tem a funcionalidade QoS habilitada?"
+          },
+          {
+            "id": "A4",
+            "kind": "action",
+            "text": "Verifique a configuração de QoS no roteador, garantindo prioridade para tráfego de jogos (porta/porta ou DSCP)."
+          },
+          {
+            "id": "F3",
+            "kind": "end",
+            "text": "Com QoS configurado, teste novamente; se o ping melhorar, o problema era falta de priorização."
+          },
+          {
+            "id": "A5",
+            "kind": "action",
+            "text": "Ative a função QoS no roteador e configure prioridade para jogos."
+          },
+          {
+            "id": "F4",
+            "kind": "end",
+            "text": "Após ativar QoS, teste ping durante upload; se estabilizar, o problema foi mitigado."
+          }
+        ],
+        "edges": [
+          {
+            "source": "P1",
+            "target": "A1",
+            "label": "Sim"
+          },
+          {
+            "source": "P1",
+            "target": "P2",
+            "label": "Não"
+          },
+          {
+            "source": "A1",
+            "target": "F1",
+            "label": "Concluído"
+          },
+          {
+            "source": "P2",
+            "target": "A3",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "P3",
+            "label": "Não"
+          },
+          {
+            "source": "A3",
+            "target": "F2",
+            "label": "Concluído"
+          },
+          {
+            "source": "P3",
+            "target": "A4",
+            "label": "Sim"
+          },
+          {
+            "source": "P3",
+            "target": "A5",
+            "label": "Não"
+          },
+          {
+            "source": "A4",
+            "target": "F3",
+            "label": "Concluído"
+          },
+          {
+            "source": "A5",
+            "target": "F4",
+            "label": "Concluído"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:a74e974fce32563e73eedc1851a2e8aaed9c220bcc5dcf377361145fbc7fa415"
+    }
+  ],
+  "blind_seed": 486656,
+  "blind_map": [
+    {
+      "content_type": "diagnosis",
+      "seed": 101,
+      "a": "v3",
+      "b": "v4"
+    },
+    {
+      "content_type": "steps",
+      "seed": 101,
+      "a": "v4",
+      "b": "v3"
+    },
+    {
+      "content_type": "questions",
+      "seed": 101,
+      "a": "v3",
+      "b": "v4"
+    },
+    {
+      "content_type": "flow",
+      "seed": 101,
+      "a": "v3",
+      "b": "v4"
+    }
+  ],
+  "evaluations": [],
+  "profile": {
+    "id": "p03_carla",
+    "name": "Carla",
+    "technical_level": "avancado",
+    "communication_style": "detalhado",
+    "channel": "email"
+  },
+  "rubric": "Clareza (clarity)\n  1: Desorganizado, contraditório ou ambíguo em ponto central.\n  3: Compreensível, com 1 ou 2 trechos ambíguos.\n  5: Cada item tem um só sentido, em ordem lógica, sem redundância.\n  2 e 4: entre as âncoras vizinhas.\n\nAdequação ao nível do cliente (customer_fit)\n  1: Registro errado para o perfil (ex.: comando de terminal para leigo ao telefone).\n  3: Adequado na maior parte, com 1 ou 2 desvios (ex.: jargão sem explicação).\n  5: Vocabulário, profundidade e formato combinam com nível, estilo e canal em todos os itens.\n  2 e 4: entre as âncoras vizinhas.\n\nAcionabilidade (actionability)\n  1: Não dá para saber o que fazer.\n  3: Próximo passo claro, sem critério de sucesso nem alternativa.\n  5: Próximo passo inequívoco, com resultado esperado e o que fazer se falhar.\n  2 e 4: entre as âncoras vizinhas."
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261123T060740Z_42b678",
+  "timestamp": "2026-11-23T06:07:40.035325Z",
+  "customer_id": "p03_carla",
+  "ticket_id": "t01_queda_noturna",
+  "ticket": "Boa noite. A internet cai toda noite e volta sozinha depois de um tempo. Já aconteceu várias vezes essa semana. Podem resolver?",
+  "content_type": "steps",
+  "prompt_version": "v3",
+  "prompt_hash": "sha256:234665f175bb07dd31d708a8df66bb44c6434a80fd0c70adea37b8a5ea9fe331",
+  "schema_hash": "sha256:88e57f74e188e7f09bb33dcff9ad1d97b94e7a1e4af315bab802caf054c2a071",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "params": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 101,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "include_reasoning": false
+  },
+  "cache_key": "sha256:4263774bbcf7c01cc7977edc862e51690c4cf7a1a4fcfa6a5f61ab73ed898a05",
+  "cache_hit": false,
+  "usage": {
+    "input_tokens": 1064,
+    "output_tokens": 754
+  },
+  "latency_ms": 2149,
+  "finish_reason": "stop",
+  "repaired": false,
+  "status": "ok",
+  "output": {
+    "opening": "Olá Carla, boa noite! Identificamos que sua conexão está caindo durante a noite e restabelecendo sozinha, conforme relatado.",
+    "steps": [
+      {
+        "action": "A conexão está apresentando instabilidade agora? Se estiver com internet, aguarde até que a próxima queda ocorra.",
+        "expected_result": "Se a internet cair novamente, você perceberá a ausência de navegação em todos os dispositivos conectados.",
+        "if_fails": "Se a conexão permanecer estável, registre a hora em que verificou e continue observando até a próxima queda."
+      },
+      {
+        "action": "Quando a internet cair, verifique se o problema ocorre em mais de um aparelho (por exemplo, celular, computador ou TV). Você percebe a falta de conexão em todos eles?",
+        "expected_result": "Se todos os aparelhos perderem conexão simultaneamente, indica que o problema está na rede da Conecta Fibra ou no equipamento principal (modem/ONT).",
+        "if_fails": "Se apenas um aparelho for afetado, anote qual e continue observando, pois pode ser um problema local do dispositivo."
+      },
+      {
+        "action": "Com a internet caída, observe as luzes do modem/ONT por cerca de 2 minutos. As luzes de “Internet” ou “WAN” permanecem acesas ou piscam?",
+        "expected_result": "Se as luzes permanecerem acesas (ou piscando de forma intermitente) mesmo sem conexão, isso indica que o sinal está chegando ao equipamento, mas há falha na camada de rede.",
+        "if_fails": "Se as luzes apagarem ou ficarem estáticas, registre essa condição e informe ao atendente, pois pode ser perda de sinal ou falha de energia no equipamento."
+      },
+      {
+        "action": "Desligue o modem/ONT da tomada, aguarde 30 segundos e ligue novamente somente se a queda ainda estiver ocorrendo em mais de um aparelho.",
+        "expected_result": "Após o reinício, a conexão deve restabelecer e permanecer estável por pelo menos 30 minutos.",
+        "if_fails": "Se a conexão cair novamente dentro desse período, anote a hora da nova queda e continue observando."
+      },
+      {
+        "action": "Caso a queda volte a acontecer, registre a hora exata, quais aparelhos estavam conectados e o estado das luzes do equipamento no momento da falha.",
+        "expected_result": "Essas informações permitirão um diagnóstico mais preciso e acelerarão a solução.",
+        "if_fails": "Se não houver nova queda, continue monitorando e, se o problema persistir nos próximos dias, reúna os mesmos dados para encaminhamento."
+      }
+    ],
+    "closing": "Agradecemos sua colaboração, Carla. Por favor, siga os passos acima e, ao observar uma nova queda, envie-nos as informações registradas respondendo a este e‑mail. Assim poderemos avançar na análise do problema.",
+    "escalation_condition": "Encaminhar o caso se a queda ocorrer em mais de um aparelho, as luzes do equipamento apresentarem comportamento anômalo (apagadas ou estáticas) ou se houver recorrência de falhas nos últimos 3 dias, mesmo após reinício do modem/ONT.",
+    "subject": "Instabilidade da conexão de internet à noite"
+  },
+  "raw_output": null,
+  "evaluation": null
+}

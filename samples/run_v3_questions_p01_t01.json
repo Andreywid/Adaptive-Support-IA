@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261123T060206Z_7964a1",
+  "timestamp": "2026-11-23T06:02:06.120074Z",
+  "customer_id": "p01_marta",
+  "ticket_id": "t01_queda_noturna",
+  "ticket": "Boa noite. A internet cai toda noite e volta sozinha depois de um tempo. Já aconteceu várias vezes essa semana. Podem resolver?",
+  "content_type": "questions",
+  "prompt_version": "v3",
+  "prompt_hash": "sha256:894c60919ece86f71f83cfbc27bf7a655861636eded9c3ee39a70bc2a49ba315",
+  "schema_hash": "sha256:534962526ae9305d09538c1c8a661d33b47217b8bac65f590d6c221acc74ce59",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "params": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 102,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "include_reasoning": false
+  },
+  "cache_key": "sha256:65aa4eb362e9e27619f2c649c4aac1f8744b101ed22bac1fa4b799830fb30761",
+  "cache_hit": false,
+  "usage": {
+    "input_tokens": 1803,
+    "output_tokens": 529
+  },
+  "latency_ms": 3134,
+  "finish_reason": "stop",
+  "repaired": true,
+  "status": "ok",
+  "output": {
+    "questions": [
+      {
+        "priority": 1,
+        "text": "A internet está funcionando neste momento?",
+        "kind": "yes_no",
+        "options": [],
+        "resolves": "Se Sim, a queda não está ocorrendo agora; se Não, a conexão está offline no momento."
+      },
+      {
+        "priority": 2,
+        "text": "A queda acontece em apenas um aparelho ou em vários ao mesmo tempo?",
+        "kind": "choice",
+        "options": [
+          "Só neste aparelho",
+          "Em vários aparelhos",
+          "Não sei"
+        ],
+        "resolves": "Se só neste aparelho, pode ser problema local; se em vários, indica falha na rede ou no modem."
+      },
+      {
+        "priority": 3,
+        "text": "Você percebe um horário específico em que a internet cai, como sempre à noite?",
+        "kind": "open",
+        "options": [],
+        "resolves": "Informar o horário ajuda a identificar se há interferência ou manutenção programada."
+      }
+    ]
+  },
+  "raw_output": null,
+  "evaluation": null
+}

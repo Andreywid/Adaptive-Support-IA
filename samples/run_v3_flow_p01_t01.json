@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261123T060313Z_6edddc",
+  "timestamp": "2026-11-23T06:03:13.976878Z",
+  "customer_id": "p01_marta",
+  "ticket_id": "t01_queda_noturna",
+  "ticket": "Boa noite. A internet cai toda noite e volta sozinha depois de um tempo. Já aconteceu várias vezes essa semana. Podem resolver?",
+  "content_type": "flow",
+  "prompt_version": "v3",
+  "prompt_hash": "sha256:88e44ff71d5b08721385ccf91286142b05cde2d2ecb8b53d3c575713a433cda7",
+  "schema_hash": "sha256:12e8694d1975b2ef4424ba8be411d24b76d38258b891b8716182e7852e3fe1b8",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "params": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 102,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "include_reasoning": false
+  },
+  "cache_key": "sha256:313b02e0405a6389f99a98d15adf37281bb96808c9dda98541a4f9df7a97c632",
+  "cache_hit": false,
+  "usage": {
+    "input_tokens": 1001,
+    "output_tokens": 1355
+  },
+  "latency_ms": 3312,
+  "finish_reason": "stop",
+  "repaired": false,
+  "status": "ok",
+  "output": {
+    "nodes": [
+      {
+        "id": "P1",
+        "kind": "question",
+        "text": "A internet está funcionando agora?"
+      },
+      {
+        "id": "P2",
+        "kind": "question",
+        "text": "A queda acontece em todos os aparelhos?"
+      },
+      {
+        "id": "P3",
+        "kind": "question",
+        "text": "As luzes do modem estão ligadas e piscando?"
+      },
+      {
+        "id": "P4",
+        "kind": "question",
+        "text": "A internet funciona no outro aparelho?"
+      },
+      {
+        "id": "P5",
+        "kind": "question",
+        "text": "A internet voltou após reiniciar?"
+      },
+      {
+        "id": "A1",
+        "kind": "action",
+        "text": "Oriente reiniciar modem e roteador."
+      },
+      {
+        "id": "F1",
+        "kind": "end",
+        "text": "Registre recorrência e peça observar nova queda."
+      },
+      {
+        "id": "F2",
+        "kind": "end",
+        "text": "Registre falta de energia no equipamento e encaminhe avaliação técnica."
+      },
+      {
+        "id": "F3",
+        "kind": "end",
+        "text": "Encaminhar avaliação técnica e registrar sinais observados."
+      }
+    ],
+    "edges": [
+      {
+        "source": "P1",
+        "target": "F1",
+        "label": "Sim"
+      },
+      {
+        "source": "P1",
+        "target": "P2",
+        "label": "Não"
+      },
+      {
+        "source": "P2",
+        "target": "P3",
+        "label": "Sim"
+      },
+      {
+        "source": "P2",
+        "target": "P4",
+        "label": "Não"
+      },
+      {
+        "source": "P3",
+        "target": "A1",
+        "label": "Sim"
+      },
+      {
+        "source": "P3",
+        "target": "F2",
+        "label": "Não"
+      },
+      {
+        "source": "A1",
+        "target": "P5",
+        "label": "próximo"
+      },
+      {
+        "source": "P5",
+        "target": "F1",
+        "label": "Sim"
+      },
+      {
+        "source": "P5",
+        "target": "F3",
+        "label": "Não"
+      },
+      {
+        "source": "P4",
+        "target": "F1",
+        "label": "Sim"
+      },
+      {
+        "source": "P4",
+        "target": "F3",
+        "label": "Não"
+      }
+    ]
+  },
+  "raw_output": null,
+  "evaluation": null
+}

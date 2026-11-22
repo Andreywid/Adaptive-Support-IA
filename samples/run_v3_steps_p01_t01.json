@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261123T060039Z_97744f",
+  "timestamp": "2026-11-23T06:00:39.973136Z",
+  "customer_id": "p01_marta",
+  "ticket_id": "t01_queda_noturna",
+  "ticket": "Boa noite. A internet cai toda noite e volta sozinha depois de um tempo. Já aconteceu várias vezes essa semana. Podem resolver?",
+  "content_type": "steps",
+  "prompt_version": "v3",
+  "prompt_hash": "sha256:1ca3cace53e32ae39a718fef204169ddb9eb67cf4e96b76a4007b1d1389a71e1",
+  "schema_hash": "sha256:88e57f74e188e7f09bb33dcff9ad1d97b94e7a1e4af315bab802caf054c2a071",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "params": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 102,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "include_reasoning": false
+  },
+  "cache_key": "sha256:5f2f6fbab973f8dafd240ab6aaf864dfbd6f6c6c5da81ae5801ed4aff5d24427",
+  "cache_hit": false,
+  "usage": {
+    "input_tokens": 1078,
+    "output_tokens": 392
+  },
+  "latency_ms": 1866,
+  "finish_reason": "stop",
+  "repaired": false,
+  "status": "ok",
+  "output": {
+    "opening": "Boa noite, Marta. Entendo que a internet cai à noite e volta sozinha. Vamos verificar juntos.",
+    "steps": [
+      {
+        "action": "A internet está funcionando agora?",
+        "expected_result": "Se estiver funcionando, anotamos que o problema está intermitente e aguardamos a próxima queda.",
+        "if_fails": "Se não estiver funcionando, continue para o próximo passo."
+      },
+      {
+        "action": "Quando a internet cair, verifique se o problema acontece em mais de um aparelho da sua casa.",
+        "expected_result": "Se todos os aparelhos perderem conexão, anotamos que o alcance é geral; se só um, registramos aparelho específico.",
+        "if_fails": "Se não houver outro aparelho para testar, registre que o alcance ficou em aberto e siga para o próximo passo."
+      },
+      {
+        "action": "Se ainda estiver sem internet, desligue o modem da tomada, aguarde 30 segundos e ligue novamente.",
+        "expected_result": "Se a conexão voltar após o reinício, anotamos que o reinício resolveu temporariamente e pedimos que observe se o problema retorna.",
+        "if_fails": "Se a internet não voltar, registre a falha persistente e prepare para encaminhar ao suporte avançado."
+      }
+    ],
+    "closing": "Anote o que aconteceu em cada teste e, se o problema voltar, informe ao atendente para que possamos abrir um acompanhamento.",
+    "escalation_condition": "Encaminhar caso a internet não volte após o reinício ou se a queda ocorrer em todos os aparelhos de forma recorrente.",
+    "subject": null
+  },
+  "raw_output": null,
+  "evaluation": null
+}

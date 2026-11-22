@@ -1,0 +1,323 @@
+{
+  "schema_version": "1.0",
+  "comparison_id": "cmp_20261123T105234Z_97e90128770c",
+  "created_at": "2026-11-23T10:52:34.669090Z",
+  "customer_id": "p04_joao",
+  "ticket_id": "t05_tv_travando",
+  "ticket": "Só a TV da sala trava nos filmes. No celular e no notebook, no mesmo Wi-Fi, o vídeo roda normal. A TV sempre ficou no mesmo lugar e isso começou na semana passada.",
+  "versions": [
+    "v3",
+    "v4"
+  ],
+  "seeds": [
+    101
+  ],
+  "content_types": [
+    "diagnosis",
+    "steps",
+    "questions",
+    "flow"
+  ],
+  "locked_config": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "include_reasoning": false
+  },
+  "schema_hashes": {
+    "diagnosis": "sha256:d284a8e0191d0f3f7b1ff778cb027e11757097eca7468600186c0f895cdfe54c",
+    "steps": "sha256:88e57f74e188e7f09bb33dcff9ad1d97b94e7a1e4af315bab802caf054c2a071",
+    "questions": "sha256:534962526ae9305d09538c1c8a661d33b47217b8bac65f590d6c221acc74ce59",
+    "flow": "sha256:12e8694d1975b2ef4424ba8be411d24b76d38258b891b8716182e7852e3fe1b8"
+  },
+  "runs": [
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "diagnosis",
+      "run_id": "20261123T105300Z_29807b",
+      "cache_hit": false,
+      "status": "invalid_output",
+      "output": null,
+      "raw_output": "{\n  \"hypotheses\": [\n    {\n      \"id\": \"H1\",\n      \"description\": \"Problema de sinal ou interferência na TV da sala, possivelmente causado por falha no módulo Wi‑Fi interno ou na antena da TV.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Só a TV da sala trava nos filmes. No celular e no notebook, no mesmo Wi‑Fi, o vídeo roda normal.\",\n          \"reading\": \"O trecho mostra que o travamento ocorre apenas na TV, sugerindo sinal fraco ou interferência no Wi‑Fi da TV. Não prova que a falha seja do hardware da TV ou da rede.\"\n        }\n      ],\n      \"plausibility\": \"high\"\n    },\n    {\n      \"id\": \"H2\",\n      \"description\": \"Configuração ou firmware da TV desatualizado, causando travamento ao reproduzir streams de vídeo.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Só a TV da sala trava nos filmes.\",\n          \"reading\": \"Indica que o problema aparece ao reproduzir vídeos, o que pode estar ligado ao software da TV. Não confirma que a TV esteja desatualizada.\"\n        }\n      ],\n      \"plausibility\": \"medium\"\n    },\n    {\n      \"id\": \"H3\",\n      \"description\": \"Problema de sobrecarga ou falha no roteador que afeta apenas o canal usado pela TV.\",\n      \"evidence\": [\n        {\n          \"quote\": \"No celular e no notebook, no mesmo Wi‑Fi, o vídeo roda normal.\",\n          \"reading\": \"Mostra que outros dispositivos funcionam bem, sugerindo que a falha pode estar restrita ao canal ou frequência que a TV utiliza. Não prova que o roteador seja a causa.\"\n        }\n      ],\n      \"plausibility\": \"low\"\n    }\n  ],\n  \"missing_information\": [\n    \"Teste de velocidade ou sinal Wi‑Fi diretamente na TV.\",\n    \"Versão do firmware da TV e data da última atualização.\",\n    \"Configurações de canal/frequência Wi‑Fi usadas pela TV.\"\n  ],\n  \"conclusion\": {\n    \"hypothesis_id\": \"H1\",\n    \"confidence\": \"high\",\n    \"statement\": \"É mais provável que a TV esteja recebendo sinal Wi‑Fi fraco ou interferido. Verificar a intensidade do sinal na TV será o próximo passo.\"\n  },\n  \"customer_summary\": \"A TV da sala trava só nos filmes, enquanto outros dispositivos funcionam bem no mesmo Wi‑Fi. Vamos checar a força do sinal Wi‑Fi na TV.\",\n  \"escalation\": {\n    \"needed\": false,\n    \"reason\": \"Nenhum risco imediato à conta, dados ou equipamento foi identificado.\"\n  }\n}",
+      "prompt_hash": "sha256:2443595bcfa4dacac72f2517fb40246292cf01a2d5753ae36fb5be9d68e8641a"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "diagnosis",
+      "run_id": "20261123T105348Z_32a302",
+      "cache_hit": false,
+      "status": "invalid_output",
+      "output": null,
+      "raw_output": "{\n  \"hypotheses\": [\n    {\n      \"id\": \"H1\",\n      \"description\": \"A TV está recebendo sinal Wi‑Fi fraco ou instável no local onde está instalada.\",\n      \"evidence\": [\n        {\n          \"quote\": \"Só a TV da sala trava nos filmes.\",\n          \"reading\": \"A TV é o único equipamento que apresenta travamento, sugerindo que o problema pode estar na qualidade do sinal que ela recebe.\"\n        }\n      ],\n      \"plausibility\": \"medium\"\n    },\n    {\n      \"id\": \"H2\",\n      \"description\": \"A TV recebeu uma atualização de firmware ou software que introduziu um bug nos vídeos.\",\n      \"evidence\": [\n        {\n          \"quote\": \"isso começou na semana passada.\",\n          \"reading\": \"O início recente pode coincidir com uma atualização, embora o cliente não tenha confirmado que houve atualização.\"\n        }\n      ],\n      \"plausibility\": \"low\"\n    },\n    {\n      \"id\": \"H3\",\n      \"description\": \"O aplicativo/serviço de streaming usado na TV está com falha específica para esse aparelho.\",\n      \"evidence\": [\n        {\n          \"quote\": \"No celular e no notebook, no mesmo Wi‑Fi, o vídeo roda normal.\",\n          \"reading\": \"Outros dispositivos funcionam bem na mesma rede, indicando que o problema pode estar no app ou serviço na TV.\"\n        }\n      ],\n      \"plausibility\": \"low\"\n    }\n  ],\n  \"missing_information\": [\n    \"A TV está conectada por Wi‑Fi ou cabo Ethernet?\",\n    \"Qual a intensidade do sinal Wi‑Fi na TV (índice de sinal ou número de barras)?\",\n    \"Outros aplicativos de vídeo na TV apresentam o mesmo travamento?\"\n  ],\n  \"conclusion\": {\n    \"hypothesis_id\": \"H1\",\n    \"confidence\": \"medium\",\n    \"statement\": \"É mais provável que o travamento seja causado por sinal Wi‑Fi fraco ou instável na TV. Vamos confirmar verificando a força do sinal na TV.\"\n  },\n  \"customer_summary\": \"A TV trava só nos filmes, enquanto celular e notebook funcionam bem no mesmo Wi‑Fi. Vamos checar a intensidade do sinal Wi‑Fi na TV.\",\n  \"escalation\": {\n    \"needed\": false,\n    \"reason\": \"Não há risco imediato à conta, dados ou equipamento.\"\n  }\n}",
+      "prompt_hash": "sha256:04da1240eb3a2c97351c7254c0f115d98f7dcc4342a23206fba8f1ce6c434c83"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "steps",
+      "run_id": "20261123T105412Z_b0f463",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Olá João, entendi que a TV da sala está travando só nos filmes, enquanto outros dispositivos funcionam bem.",
+        "steps": [
+          {
+            "action": "A TV está travando agora?",
+            "expected_result": "Se parar, anotamos que o problema não está ocorrendo no momento e combinamos o que observar na próxima vez que travar.",
+            "if_fails": "Se continuar travando, vamos verificar se o problema acontece em outros aplicativos ou canais na mesma TV."
+          },
+          {
+            "action": "Consegue abrir outro app de vídeo (por exemplo, YouTube) na TV e reproduzir um vídeo?",
+            "expected_result": "Se o vídeo rodar sem travar, o problema parece estar restrito aos filmes do serviço que você usa.",
+            "if_fails": "Se também travar, vamos testar a conexão da TV com o roteador."
+          },
+          {
+            "action": "Desconecte a TV da tomada, aguarde 30 segundos e ligue novamente.",
+            "expected_result": "Se após o reinício a TV reproduzir os filmes sem travar, o problema pode ter sido temporário.",
+            "if_fails": "Se ainda travar, verifique se outras TVs ou dispositivos conectados ao mesmo cabo de rede (se houver) apresentam o mesmo sintoma."
+          },
+          {
+            "action": "A TV está conectada ao Wi‑Fi ou por cabo Ethernet?",
+            "expected_result": "Se estiver por Wi‑Fi, teste conectar a TV ao roteador usando um cabo Ethernet temporariamente.",
+            "if_fails": "Se já estiver por cabo ou o teste não for possível, registre que a TV está usando Wi‑Fi e passe a informação ao atendente."
+          },
+          {
+            "action": "Depois de testar, a TV ainda trava nos filmes?",
+            "expected_result": "Se não travar, informamos que o problema foi resolvido com as verificações realizadas.",
+            "if_fails": "Se ainda travar, registre o comportamento (ex.: trava após X minutos, só em determinados títulos) e informe ao atendente para análise mais aprofundada."
+          }
+        ],
+        "closing": "Anote os resultados dos testes e, se o problema persistir, informe ao atendente para que possamos investigar mais a fundo.",
+        "escalation_condition": "Encaminhar caso a TV continue travando nos filmes mesmo após os testes, especialmente se o travamento ocorrer em vários títulos ou se houver indícios de problema de rede ou hardware.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:a4ee86a8b303b73ded2d077755796ea7cc14dc176ff77504775ad32a781205f9"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "steps",
+      "run_id": "20261123T105436Z_99f995",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Oi João, entendi que a TV da sala está travando só nos filmes.",
+        "steps": [
+          {
+            "action": "A TV está travando agora? Se sim, descreva o que aparece na tela (imagem congelada, mensagem, etc.).",
+            "expected_result": "Se a TV ainda estiver travada, você verá a imagem parada ou alguma mensagem de erro. Isso confirma que o problema está ativo no momento.",
+            "if_fails": "Se a TV não estiver travando agora, passe para o próximo passo."
+          },
+          {
+            "action": "Teste outro conteúdo (por exemplo, um canal aberto ou um vídeo do YouTube) na mesma TV. O vídeo trava?",
+            "expected_result": "Se o outro conteúdo rodar sem travar, o problema parece estar limitado aos filmes. Isso indica que a falha pode estar no aplicativo ou no arquivo usado para filmes.",
+            "if_fails": "Se também travar, registre que a TV trava com qualquer vídeo e informe ao atendente."
+          },
+          {
+            "action": "Desligue a TV da tomada, aguarde 30 segundos e ligue novamente.",
+            "expected_result": "A TV deve reiniciar e, ao abrir um filme, o travamento deve desaparecer. Se o problema continuar, anote que o reinício não resolveu.",
+            "if_fails": "Se ainda travar, informe ao atendente que o problema persiste após o reinício."
+          }
+        ],
+        "closing": "Obrigado, João. Anote o que aconteceu em cada teste e informe ao atendente para que possamos analisar o próximo passo.",
+        "escalation_condition": "Encaminhar caso a TV continue travando mesmo após o reinício ou se o travamento ocorrer com todos os tipos de vídeo.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:38d0898b490d20876cb5911f40423c0adb7e1dc3e5a3aa03e89bea7407daf930"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "questions",
+      "run_id": "20261123T105523Z_a7f1e8",
+      "cache_hit": false,
+      "status": "invalid_output",
+      "output": null,
+      "raw_output": "{\n  \"questions\": [\n    {\n      \"priority\": 1,\n      \"text\": \"A TV ainda está travando nos filmes agora?\",\n      \"kind\": \"yes_no\",\n      \"options\": [\"Sim\", \"Não\", \"Não sei\"],\n      \"resolves\": \"Se Sim → avançar para próximo teste; Se Não → verificar se o problema voltou a acontecer.\"\n    },\n    {\n      \"priority\": 2,\n      \"text\": \"Esse problema acontece só nessa TV ou também em outras TVs da sua casa?\",\n      \"kind\": \"choice\",\n      \"options\": [\"Só nessa TV\", \"Em mais de uma TV\", \"Não tenho outra TV\", \"Não sei\"],\n      \"resolves\": \"Se Só nessa TV → focar na TV; Se Em mais de uma TV → analisar sinal Wi‑Fi para TVs.\"\n    },\n    {\n      \"priority\": 3,\n      \"text\": \"Quando o travamento ocorre, as luzes da TV (energia ou Wi‑Fi) estão acesas, piscando ou apagadas?\",\n      \"kind\": \"choice\",\n      \"options\": [\"Luz fixa\", \"Pisca\", \"Apagada\", \"Não vejo a luz\", \"Não sei\"],\n      \"resolves\": \"Se Luz fixa ou Pisca → observar comportamento do sinal; Se Apagada ou Não vejo a luz → registrar para verificação de energia ou cabo.\"\n    }\n  ]\n}",
+      "prompt_hash": "sha256:078435f6cb3e533d7cd67c84b4dc4e6268555e281bb066998c88bd70c971b756"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "questions",
+      "run_id": "20261123T105546Z_e8d3e8",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "A TV está travando agora, enquanto você assiste a um filme?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se sim, confirmamos que o problema está ativo e passamos para a próxima verificação; se não, perguntamos se o travamento ocorre em outros momentos."
+          },
+          {
+            "priority": 2,
+            "text": "Alguma outra TV conectada ao mesmo Wi‑Fi apresenta o mesmo travamento?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se sim, investigamos a rede Wi‑Fi; se não, focamos na TV específica."
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:a043fb036f413772e4873766d8b73a9f8feb34452eac942be6c878fb064944c2"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "flow",
+      "run_id": "20261123T105610Z_b029de",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "P1",
+            "kind": "question",
+            "text": "A TV está travando agora?"
+          },
+          {
+            "id": "F1",
+            "kind": "end",
+            "text": "Registre recorrência e peça ao cliente observar próximas falhas."
+          },
+          {
+            "id": "P2",
+            "kind": "question",
+            "text": "Outros aparelhos na mesma rede também travam?"
+          },
+          {
+            "id": "A1",
+            "kind": "action",
+            "text": "Peça ao cliente reiniciar a TV e observar se o travamento persiste."
+          },
+          {
+            "id": "F2",
+            "kind": "end",
+            "text": "Registre os sinais observados e encaminhe para avaliação técnica."
+          },
+          {
+            "id": "A2",
+            "kind": "action",
+            "text": "Oriente o cliente a reiniciar a TV."
+          },
+          {
+            "id": "P3",
+            "kind": "question",
+            "text": "O travamento parou após reiniciar a TV?"
+          },
+          {
+            "id": "F3",
+            "kind": "end",
+            "text": "Registre a solução e peça ao cliente observar se volta a acontecer."
+          },
+          {
+            "id": "F4",
+            "kind": "end",
+            "text": "Encaminhar para avaliação técnica e registrar que apenas a TV apresenta o problema."
+          }
+        ],
+        "edges": [
+          {
+            "source": "P1",
+            "target": "F1",
+            "label": "Não"
+          },
+          {
+            "source": "P1",
+            "target": "P2",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "A1",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "A2",
+            "label": "Não"
+          },
+          {
+            "source": "A1",
+            "target": "F2",
+            "label": "Próximo passo"
+          },
+          {
+            "source": "A2",
+            "target": "P3",
+            "label": "Próximo passo"
+          },
+          {
+            "source": "P3",
+            "target": "F3",
+            "label": "Sim"
+          },
+          {
+            "source": "P3",
+            "target": "F4",
+            "label": "Não"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:3472fcaaf91021f7a3506efcc86c85f6cf9476a5814b02d4cb6cae747b1fe326"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "flow",
+      "run_id": "20261123T105703Z_1a2d7e",
+      "cache_hit": false,
+      "status": "invalid_output",
+      "output": null,
+      "raw_output": "{\n  \"nodes\": [\n    {\n      \"id\": \"P1\",\n      \"kind\": \"question\",\n      \"text\": \"A TV está travando agora ao reproduzir um filme?\"\n    },\n    {\n      \"id\": \"A1\",\n      \"kind\": \"action\",\n      \"text\": \"Desligue a TV da tomada, aguarde 10 s e ligue novamente.\"\n    },\n    {\n      \"id\": \"P2\",\n      \"kind\": \"question\",\n      \"text\": \"Depois de reiniciar, a TV ainda trava ao reproduzir um filme?\"\n    },\n    {\n      \"id\": \"P3\",\n      \"kind\": \"question\",\n      \"text\": \"A TV está conectada ao mesmo Wi‑Fi que o celular e o notebook?\"\n    },\n    {\n      \"id\": \"P4\",\n      \"kind\": \"question\",\n      \"text\": \"Teste outro aplicativo de streaming (ex.: YouTube) e veja se o vídeo também trava?\"\n    },\n    {\n      \"id\": \"F1\",\n      \"kind\": \"end\",\n      \"text\": \"Encerrar: cliente informou que a TV não está travando no momento.\"\n    },\n    {\n      \"id\": \"F2\",\n      \"kind\": \"end\",\n      \"text\": \"Problema resolvido após reinício da TV.\"\n    },\n    {\n      \"id\": \"F3\",\n      \"kind\": \"end\",\n      \"text\": \"Orientar conectar a TV ao mesmo Wi‑Fi usado pelos outros dispositivos.\"\n    },\n    {\n      \"id\": \"F4\",\n      \"kind\": \"end\",\n      \"text\": \"Encaminhar para avaliação técnica e registrar detalhes do caso.\"\n    }\n  ],\n  \"edges\": [\n    {\n      \"source\": \"P1\",\n      \"target\": \"A1\",\n      \"label\": \"Sim\"\n    },\n    {\n      \"source\": \"P1\",\n      \"target\": \"F1\",\n      \"label\": \"Não\"\n    },\n    {\n      \"source\": \"A1\",\n      \"target\": \"P2\",\n      \"label\": \"\"\n    },\n    {\n      \"source\": \"P2\",\n      \"target\": \"F2\",\n      \"label\": \"Não\"\n    },\n    {\n      \"source\": \"P2\",\n      \"target\": \"P3\",\n      \"label\": \"Sim\"\n    },\n    {\n      \"source\": \"P3\",\n      \"target\": \"F3\",\n      \"label\": \"Não\"\n    },\n    {\n      \"source\": \"P3\",\n      \"target\": \"P4\",\n      \"label\": \"Sim\"\n    },\n    {\n      \"source\": \"P4\",\n      \"target\": \"F4\",\n      \"label\": \"Sim\"\n    },\n    {\n      \"source\": \"P4\",\n      \"target\": \"F4\",\n      \"label\": \"Não\"\n    }\n  ]\n}",
+      "prompt_hash": "sha256:0d9c9ab06d62412ffc96079e5f45654a5c40b2a4f6c17a241ef380fedb66372e"
+    }
+  ],
+  "blind_seed": 541507,
+  "blind_map": [
+    {
+      "content_type": "diagnosis",
+      "seed": 101,
+      "a": "v4",
+      "b": "v3"
+    },
+    {
+      "content_type": "steps",
+      "seed": 101,
+      "a": "v4",
+      "b": "v3"
+    },
+    {
+      "content_type": "questions",
+      "seed": 101,
+      "a": "v4",
+      "b": "v3"
+    },
+    {
+      "content_type": "flow",
+      "seed": 101,
+      "a": "v3",
+      "b": "v4"
+    }
+  ],
+  "evaluations": [],
+  "profile": {
+    "id": "p04_joao",
+    "name": "João",
+    "technical_level": "leigo",
+    "communication_style": "direto",
+    "channel": "chat"
+  },
+  "rubric": "Clareza (clarity)\n  1: Desorganizado, contraditório ou ambíguo em ponto central.\n  3: Compreensível, com 1 ou 2 trechos ambíguos.\n  5: Cada item tem um só sentido, em ordem lógica, sem redundância.\n  2 e 4: entre as âncoras vizinhas.\n\nAdequação ao nível do cliente (customer_fit)\n  1: Registro errado para o perfil (ex.: comando de terminal para leigo ao telefone).\n  3: Adequado na maior parte, com 1 ou 2 desvios (ex.: jargão sem explicação).\n  5: Vocabulário, profundidade e formato combinam com nível, estilo e canal em todos os itens.\n  2 e 4: entre as âncoras vizinhas.\n\nAcionabilidade (actionability)\n  1: Não dá para saber o que fazer.\n  3: Próximo passo claro, sem critério de sucesso nem alternativa.\n  5: Próximo passo inequívoco, com resultado esperado e o que fazer se falhar.\n  2 e 4: entre as âncoras vizinhas."
+}

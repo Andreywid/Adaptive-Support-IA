@@ -1,0 +1,577 @@
+{
+  "schema_version": "1.0",
+  "comparison_id": "cmp_20261123T110405Z_b3873163f5bf",
+  "created_at": "2026-11-23T11:04:05.289152Z",
+  "customer_id": "p01_marta",
+  "ticket_id": "t08_relato_vago",
+  "ticket": "Minha internet não está boa. Podem ver isso?",
+  "versions": [
+    "v3",
+    "v4"
+  ],
+  "seeds": [
+    101
+  ],
+  "content_types": [
+    "diagnosis",
+    "steps",
+    "questions",
+    "flow"
+  ],
+  "locked_config": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low",
+    "include_reasoning": false
+  },
+  "schema_hashes": {
+    "diagnosis": "sha256:d284a8e0191d0f3f7b1ff778cb027e11757097eca7468600186c0f895cdfe54c",
+    "steps": "sha256:88e57f74e188e7f09bb33dcff9ad1d97b94e7a1e4af315bab802caf054c2a071",
+    "questions": "sha256:534962526ae9305d09538c1c8a661d33b47217b8bac65f590d6c221acc74ce59",
+    "flow": "sha256:12e8694d1975b2ef4424ba8be411d24b76d38258b891b8716182e7852e3fe1b8"
+  },
+  "runs": [
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "diagnosis",
+      "run_id": "20261123T110407Z_ec595a",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "hypotheses": [
+          {
+            "id": "H1",
+            "description": "Problema de sinal fraco ou instável na linha de fibra.",
+            "evidence": [
+              {
+                "quote": "Minha internet não está boa.",
+                "reading": "O cliente relata desempenho ruim, o que pode indicar sinal fraco, mas o ticket não traz detalhes sobre velocidade, quedas ou luzes do equipamento."
+              }
+            ],
+            "plausibility": "medium"
+          },
+          {
+            "id": "H2",
+            "description": "Congestionamento ou sobrecarga na rede local ou no provedor.",
+            "evidence": [
+              {
+                "quote": "Minha internet não está boa.",
+                "reading": "A queixa genérica pode ser causada por tráfego alto, porém não há informação sobre horário de pico ou número de dispositivos conectados."
+              }
+            ],
+            "plausibility": "low"
+          },
+          {
+            "id": "H3",
+            "description": "Problema no equipamento do cliente (modem/ONT ou cabos).",
+            "evidence": [
+              {
+                "quote": "Minha internet não está boa.",
+                "reading": "Desempenho ruim pode ser fruto de falha no equipamento, mas o cliente não descreveu luzes piscando ou cabos soltos."
+              }
+            ],
+            "plausibility": "low"
+          }
+        ],
+        "missing_information": [
+          "Quando o problema começou?",
+          "O problema ocorre em todos os dispositivos ou só em algum específico?",
+          "As luzes do modem/ONT estão acesas normalmente?",
+          "Houve alguma mudança recente na casa (rearranjo de cabos, nova tomada, etc.)?"
+        ],
+        "conclusion": {
+          "hypothesis_id": null,
+          "confidence": "low",
+          "statement": "É provável que o sinal esteja fraco ou instável, mas a evidência é insuficiente para confirmar. Primeiro, precisamos saber quando o problema começou e se afeta todos os dispositivos."
+        },
+        "customer_summary": "Sua internet está lenta. Vamos confirmar quando começou e se todos os aparelhos estão com o mesmo problema.",
+        "escalation": {
+          "needed": false,
+          "reason": "Não há risco imediato à conta, dados ou equipamento com as informações atuais."
+        }
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:fb27a724a36c9f58ba7651f4d02f0b4dd8586f689b36c64789fbbb2fbf7cbd0b"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "diagnosis",
+      "run_id": "20261123T110431Z_b68db7",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "hypotheses": [
+          {
+            "id": "H1",
+            "description": "A velocidade da conexão está baixa devido a congestionamento na rede da operadora.",
+            "evidence": [
+              {
+                "quote": "Minha internet não está boa.",
+                "reading": "O cliente percebe lentidão, mas não há dados de horário ou teste que confirmem congestionamento."
+              }
+            ],
+            "plausibility": "low"
+          },
+          {
+            "id": "H2",
+            "description": "O sinal da fibra está fraco ou instável no ponto de entrega.",
+            "evidence": [
+              {
+                "quote": "Minha internet não está boa.",
+                "reading": "A reclamação indica problema de qualidade, porém não há informação sobre luzes do ONT ou quedas."
+              }
+            ],
+            "plausibility": "low"
+          },
+          {
+            "id": "H3",
+            "description": "O equipamento do cliente (modem/ONT ou cabos) está com falha ou mal conectado.",
+            "evidence": [
+              {
+                "quote": "Minha internet não está boa.",
+                "reading": "A insatisfação pode ser causada por equipamento, mas o cliente não descreve nenhum sintoma de falha física."
+              }
+            ],
+            "plausibility": "low"
+          }
+        ],
+        "missing_information": [
+          "Qual a velocidade medida em um teste de velocidade (Mbps)?",
+          "O problema ocorre em todos os dispositivos ou apenas em algum específico?",
+          "A lentidão acontece em algum horário específico ou o tempo todo?"
+        ],
+        "conclusion": {
+          "hypothesis_id": null,
+          "confidence": "low",
+          "statement": "Com as informações atuais, não é possível determinar a causa mais provável. Primeiro, peça ao cliente para fazer um teste de velocidade e informar o resultado."
+        },
+        "customer_summary": "A internet está lenta. Vamos solicitar um teste de velocidade para entender melhor.",
+        "escalation": {
+          "needed": false,
+          "reason": "Não há risco imediato à conta, dados ou equipamento que justifique encaminhamento."
+        }
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:684a1c8ad5be8ba980ec6fe942e9b0570d39b6fb97af10712b1d53bba350c177"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "steps",
+      "run_id": "20261123T110454Z_db42c1",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Entendo, Marta, sua internet está lenta. Vamos verificar juntos.",
+        "steps": [
+          {
+            "action": "A internet está sem funcionar agora?",
+            "expected_result": "Se não houver conexão, anotamos que a falha está ativa.",
+            "if_fails": "Se ainda houver conexão, passe para o próximo passo."
+          },
+          {
+            "action": "Você percebe a lentidão em mais de um aparelho, como celular e computador?",
+            "expected_result": "Se ambos estiverem lentos, indica problema na linha.",
+            "if_fails": "Se só um aparelho estiver lento, registre que o alcance ficou limitado a esse equipamento."
+          },
+          {
+            "action": "Desligue e ligue novamente o roteador, aguardando 30 segundos antes de religar.",
+            "expected_result": "Se a internet melhorar, anotamos que o reinício resolveu.",
+            "if_fails": "Se continuar lenta, registre a persistência e siga para o próximo contato."
+          }
+        ],
+        "closing": "Anote o que observou e, se o problema permanecer, informe ao atendente para que possamos abrir um chamado técnico.",
+        "escalation_condition": "Encaminhar caso a lentidão persista em mais de um aparelho após o reinício ou se a falha ocorrer novamente.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:6434366b70e484f6419b94a19d3116ec4a6549898c3b3cc1f38ff3bf84e309ee"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "steps",
+      "run_id": "20261123T110518Z_126f08",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "opening": "Entendo, Marta, sua internet está lenta. Vamos verificar juntos.",
+        "steps": [
+          {
+            "action": "A senhora percebe alguma luz piscando ou apagada no modem agora?",
+            "expected_result": "Se todas as luzes estiverem acesas e estáveis, indica energia e conexão básica ok.",
+            "if_fails": "Se alguma luz estiver apagada ou piscando irregularmente, anote qual e informe ao atendente."
+          },
+          {
+            "action": "Pode abrir um site qualquer no celular ou computador e dizer se a página carrega rápido ou demora?",
+            "expected_result": "Se a página carregar rapidamente, a conexão está boa no momento.",
+            "if_fails": "Se a página demorar ou não carregar, peça para tentar outro site e informe o resultado."
+          },
+          {
+            "action": "Se a página ainda estiver lenta, desligue o modem, aguarde 30 segundos e ligue novamente, depois descreva se as luzes mudaram.",
+            "expected_result": "Se as luzes voltarem ao normal e a página carregar rápido, o problema pode ter sido temporário.",
+            "if_fails": "Se as luzes continuarem diferentes ou a página ainda estiver lenta, registre a situação para encaminhamento."
+          }
+        ],
+        "closing": "Anote o que observou e informe ao atendente. Assim poderemos analisar melhor o caso.",
+        "escalation_condition": "Encaminhar se as luzes permanecerem apagadas ou piscando e a navegação continuar lenta após o reinício do modem.",
+        "subject": null
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:5e9aa4cbc6ab1ed790c19548ca3936276d05e2f02cd94e7371e9adaf9c8f24ab"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "questions",
+      "run_id": "20261123T110541Z_150b7d",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "A internet está funcionando agora ou ainda está lenta?",
+            "kind": "choice",
+            "options": [
+              "Funcionando bem",
+              "Ainda lenta",
+              "Não funciona"
+            ],
+            "resolves": "Se estiver funcionando, o problema pode ser intermitente; seguir para a próxima pergunta. Se ainda estiver lenta ou sem conexão, continuar a investigação."
+          },
+          {
+            "priority": 2,
+            "text": "Esse problema acontece em apenas um aparelho ou em vários ao mesmo tempo?",
+            "kind": "choice",
+            "options": [
+              "Só neste aparelho",
+              "Em vários aparelhos",
+              "Não sei"
+            ],
+            "resolves": "Se for só um aparelho, focar em verificação de Wi‑Fi ou cabo desse dispositivo. Se for em vários, investigar a conexão do roteador/modem."
+          },
+          {
+            "priority": 3,
+            "text": "Em que horário do dia você percebe a piora da internet e há alguma luz piscando no roteador?",
+            "kind": "open",
+            "options": [],
+            "resolves": "Anotar horário e cor/piscada das luzes ajuda a identificar se há sobrecarga ou falha de sinal. Dependendo da resposta, a próxima ação será checar o roteador ou agendar teste de velocidade."
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:8c05df4990a860d6310073ac4f8269da1570d8efb82b970ea55033e82047062e"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "questions",
+      "run_id": "20261123T110605Z_b7f66b",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "questions": [
+          {
+            "priority": 1,
+            "text": "A internet está lenta agora?",
+            "kind": "yes_no",
+            "options": [],
+            "resolves": "Se sim, vamos verificar a qualidade do sinal no momento. Se não, precisamos saber se o problema ocorre em outros momentos."
+          },
+          {
+            "priority": 2,
+            "text": "Isso acontece em um aparelho só ou em vários aparelhos?",
+            "kind": "choice",
+            "options": [
+              "Um aparelho",
+              "Vários aparelhos",
+              "Não sei"
+            ],
+            "resolves": "Se for um aparelho, vamos focar na conexão desse equipamento. Se for vários, investigaremos a linha ou o modem. Se não souber, pediremos para testar outro dispositivo."
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:f7a03ddf3809f232fbd529caa0cef63d2c009acd4ee70e6db2613ef5a720c492"
+    },
+    {
+      "version": "v3",
+      "seed": 101,
+      "content_type": "flow",
+      "run_id": "20261123T110630Z_a4ee1f",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "P1",
+            "kind": "question",
+            "text": "A internet está funcionando agora?"
+          },
+          {
+            "id": "F1",
+            "kind": "end",
+            "text": "Registre a recorrência e peça que observe a próxima falha."
+          },
+          {
+            "id": "P2",
+            "kind": "question",
+            "text": "Só um aparelho está com problema?"
+          },
+          {
+            "id": "A1",
+            "kind": "action",
+            "text": "Oriente reiniciar modem e roteador."
+          },
+          {
+            "id": "F2",
+            "kind": "end",
+            "text": "Peça observar se a conexão melhora e registre o resultado."
+          },
+          {
+            "id": "P3",
+            "kind": "question",
+            "text": "Vários aparelhos apresentam lentidão?"
+          },
+          {
+            "id": "F3",
+            "kind": "end",
+            "text": "Registre os sinais observados, oriente reinício geral e encaminhe para avaliação técnica."
+          },
+          {
+            "id": "A2",
+            "kind": "action",
+            "text": "Peça testar a internet em outro aparelho."
+          },
+          {
+            "id": "P4",
+            "kind": "question",
+            "text": "O outro aparelho também está lento?"
+          },
+          {
+            "id": "F4",
+            "kind": "end",
+            "text": "Registre que vários aparelhos falham, oriente reinício geral e encaminhe para avaliação técnica."
+          },
+          {
+            "id": "F5",
+            "kind": "end",
+            "text": "Problema isolado ao primeiro aparelho, registre e oriente solução específica."
+          }
+        ],
+        "edges": [
+          {
+            "source": "P1",
+            "target": "F1",
+            "label": "Sim"
+          },
+          {
+            "source": "P1",
+            "target": "P2",
+            "label": "Não"
+          },
+          {
+            "source": "P2",
+            "target": "A1",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "P3",
+            "label": "Não"
+          },
+          {
+            "source": "A1",
+            "target": "F2",
+            "label": "Concluído"
+          },
+          {
+            "source": "P3",
+            "target": "F3",
+            "label": "Sim"
+          },
+          {
+            "source": "P3",
+            "target": "A2",
+            "label": "Não"
+          },
+          {
+            "source": "A2",
+            "target": "P4",
+            "label": "Concluído"
+          },
+          {
+            "source": "P4",
+            "target": "F4",
+            "label": "Sim"
+          },
+          {
+            "source": "P4",
+            "target": "F5",
+            "label": "Não"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:8c767c71e0eb3be5e7f73822bc196a809a8150b49d9315ce29f4452e08436796"
+    },
+    {
+      "version": "v4",
+      "seed": 101,
+      "content_type": "flow",
+      "run_id": "20261123T110719Z_2fba32",
+      "cache_hit": false,
+      "status": "ok",
+      "output": {
+        "nodes": [
+          {
+            "id": "P1",
+            "kind": "question",
+            "text": "A internet está lenta agora?"
+          },
+          {
+            "id": "A1",
+            "kind": "action",
+            "text": "Peça ao cliente para observar a luz da ONT: verde e fixa indica sinal OK."
+          },
+          {
+            "id": "P2",
+            "kind": "question",
+            "text": "A luz da ONT está verde e fixa?"
+          },
+          {
+            "id": "F1",
+            "kind": "end",
+            "text": "Registre: internet lenta com ONT OK. Encaminhar avaliação técnica."
+          },
+          {
+            "id": "F2",
+            "kind": "end",
+            "text": "Registre: luz da ONT irregular. Encaminhar avaliação técnica."
+          },
+          {
+            "id": "P3",
+            "kind": "question",
+            "text": "A internet já ficou lenta em outros momentos?"
+          },
+          {
+            "id": "A2",
+            "kind": "action",
+            "text": "Peça ao cliente para fazer um teste de velocidade agora (site de velocidade)."
+          },
+          {
+            "id": "P4",
+            "kind": "question",
+            "text": "A velocidade medida está abaixo do esperado?"
+          },
+          {
+            "id": "F3",
+            "kind": "end",
+            "text": "Registre: velocidade baixa no teste. Encaminhar avaliação técnica."
+          },
+          {
+            "id": "F4",
+            "kind": "end",
+            "text": "Registre: velocidade dentro do esperado. Orientar monitoramento e retorno se mudar."
+          }
+        ],
+        "edges": [
+          {
+            "source": "P1",
+            "target": "A1",
+            "label": "Sim"
+          },
+          {
+            "source": "P1",
+            "target": "P3",
+            "label": "Não"
+          },
+          {
+            "source": "A1",
+            "target": "P2",
+            "label": ""
+          },
+          {
+            "source": "P2",
+            "target": "F1",
+            "label": "Sim"
+          },
+          {
+            "source": "P2",
+            "target": "F2",
+            "label": "Não"
+          },
+          {
+            "source": "P3",
+            "target": "A2",
+            "label": "Sim"
+          },
+          {
+            "source": "P3",
+            "target": "F4",
+            "label": "Não"
+          },
+          {
+            "source": "A2",
+            "target": "P4",
+            "label": ""
+          },
+          {
+            "source": "P4",
+            "target": "F3",
+            "label": "Sim"
+          },
+          {
+            "source": "P4",
+            "target": "F4",
+            "label": "Não"
+          }
+        ]
+      },
+      "raw_output": null,
+      "prompt_hash": "sha256:8865bc5838fe145fa145e299aac02d3e3f01f46b32d8eff8ebabf8ff914aadce"
+    }
+  ],
+  "blind_seed": 661391,
+  "blind_map": [
+    {
+      "content_type": "diagnosis",
+      "seed": 101,
+      "a": "v4",
+      "b": "v3"
+    },
+    {
+      "content_type": "steps",
+      "seed": 101,
+      "a": "v3",
+      "b": "v4"
+    },
+    {
+      "content_type": "questions",
+      "seed": 101,
+      "a": "v3",
+      "b": "v4"
+    },
+    {
+      "content_type": "flow",
+      "seed": 101,
+      "a": "v3",
+      "b": "v4"
+    }
+  ],
+  "evaluations": [],
+  "profile": {
+    "id": "p01_marta",
+    "name": "Marta",
+    "technical_level": "leigo",
+    "communication_style": "didatico",
+    "channel": "telefone"
+  },
+  "rubric": "Clareza (clarity)\n  1: Desorganizado, contraditório ou ambíguo em ponto central.\n  3: Compreensível, com 1 ou 2 trechos ambíguos.\n  5: Cada item tem um só sentido, em ordem lógica, sem redundância.\n  2 e 4: entre as âncoras vizinhas.\n\nAdequação ao nível do cliente (customer_fit)\n  1: Registro errado para o perfil (ex.: comando de terminal para leigo ao telefone).\n  3: Adequado na maior parte, com 1 ou 2 desvios (ex.: jargão sem explicação).\n  5: Vocabulário, profundidade e formato combinam com nível, estilo e canal em todos os itens.\n  2 e 4: entre as âncoras vizinhas.\n\nAcionabilidade (actionability)\n  1: Não dá para saber o que fazer.\n  3: Próximo passo claro, sem critério de sucesso nem alternativa.\n  5: Próximo passo inequívoco, com resultado esperado e o que fazer se falhar.\n  2 e 4: entre as âncoras vizinhas."
+}
