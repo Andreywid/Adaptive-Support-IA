@@ -8,6 +8,8 @@ Desenvolvi este projeto para o Desafio Técnico de Estágio em IA e Engenharia d
 
 **Decisões de prompt:** as técnicas, as versões, os testes e as limitações estão em [PROMPT_ENGINEERING_NOTES.md](PROMPT_ENGINEERING_NOTES.md).
 
+**Demonstração online:** [adaptive-support-ia.streamlit.app](https://adaptive-support-ia.streamlit.app). Na aba **Atendimento**, escolha perfil, ticket, tipo e versão e clique em **Gerar resposta**. A resposta vem da API real da Groq.
+
 ## Sumário
 
 - [O que o projeto faz](#o-que-o-projeto-faz)
@@ -131,7 +133,7 @@ python -m support_assistant checks samples/comparacao_v1_v3_p01_t01.json
 streamlit run web/app.py
 ```
 
-A interface abre apenas na sua máquina e tem três abas:
+A interface abre e tem três abas:
 
 - **Atendimento:** escolhe perfil, ticket, tipo e versão, gera a resposta e mostra onde o JSON foi salvo.
 - **Comparação:** abre as comparações, com as respostas A e B e as notas da rubrica.
