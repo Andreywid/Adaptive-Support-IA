@@ -1,0 +1,17 @@
+[client]
+toolbarMode = "viewer"
+
+[server]
+address = "localhost"
+
+[theme]
+base = "light"
+font = "sans serif"
+primaryColor = "#00675B"
+backgroundColor = "#FAFCFB"
+secondaryBackgroundColor = "#EAF2EF"
+textColor = "#172E2A"
+borderColor = "#CBDCD6"
+codeBackgroundColor = "#EFF6F3"
+baseRadius = "0.625rem"
+showWidgetBorder = true
